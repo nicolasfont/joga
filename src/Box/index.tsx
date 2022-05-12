@@ -1,18 +1,19 @@
-import { css } from "@emotion/css";
+import { css,cx } from "@emotion/css";
 import { ReactNode } from "react";
 
 type BoxProps = {
-  /**
-   * The children
-   */
-  children: ReactNode;
+  children?: ReactNode;
+  className?: string;
 };
 
-export const Box = ({ ...props }: BoxProps) => (
+export const Box = ({ className, ...props }: BoxProps) => (
   <div
-    className={css`
-      display: flex;
-    `}
+    className={cx(
+      css`
+        display: flex;
+      `,
+      className
+    )}
     {...props}
   />
 );
