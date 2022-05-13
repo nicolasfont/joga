@@ -14,6 +14,7 @@ export type BoxProps = {
   className?: string;
   direction?: "column" | "row";
   gap?: number;
+  padding?: number;
 };
 
 export const Box = ({
@@ -22,6 +23,7 @@ export const Box = ({
   direction,
   gap,
   justify,
+  padding,
   ...props
 }: BoxProps) => (
   <div
@@ -33,6 +35,7 @@ export const Box = ({
         ${direction && `flex-direction: ${direction};`}
         ${gap && `gap: ${gap}px;`}
         ${justify && `justify-content: ${justify};`}
+        ${padding && `padding: ${padding}px;`}
       `,
       className
     )}
