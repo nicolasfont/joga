@@ -14,3 +14,11 @@ export const Default = () => (
     <Button>Three</Button>
   </Row>
 );
+
+export const Centered = () => (
+  <Row gap={8} justify="center">
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </Row>
+);

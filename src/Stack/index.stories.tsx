@@ -14,3 +14,11 @@ export const Default = () => (
     <Button>Three</Button>
   </Stack>
 );
+
+export const Centered = () => (
+  <Stack gap={8} align="center">
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </Stack>
+);
