@@ -1,7 +1,7 @@
 import { css, cx } from "@emotion/css";
 import { ReactNode } from "react";
 
-type BoxProps = {
+export type BoxProps = {
   children?: ReactNode;
   className?: string;
   direction?: "column" | "row";
@@ -10,6 +10,7 @@ type BoxProps = {
 
 export const Box = ({ className, direction, gap, ...props }: BoxProps) => (
   <div
+    {...props}
     className={cx(
       css`
         display: flex;
@@ -18,6 +19,5 @@ export const Box = ({ className, direction, gap, ...props }: BoxProps) => (
       `,
       className
     )}
-    {...props}
   />
 );
