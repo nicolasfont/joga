@@ -6,7 +6,7 @@ export default {
   component: Text,
 } as ComponentMeta<typeof Text>;
 
-export const Primary = () => <Text>This is some text.</Text>;
+export const Default = () => <Text>This is some text.</Text>;
 
 export const LongText = () => (
   <Text>

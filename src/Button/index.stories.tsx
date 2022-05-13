@@ -6,4 +6,4 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-export const Primary = () => <Button>Click Me</Button>;
+export const Default = () => <Button>Click Me</Button>;
