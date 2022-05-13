@@ -43,7 +43,6 @@
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
-    "prettier-plugin-organize-imports": "^2.3.4",
     "typescript": "^4.6.3",
     "vite": "^2.9.9",
     "vite-dts": "^1.0.4"

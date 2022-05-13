@@ -1,14 +1,19 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta } from "@storybook/react";
 import { Box } from "../Box";
+import { createStory } from "../createStory";
 
 export default {
   title: "Box",
   component: Box,
 } as ComponentMeta<typeof Box>;
 
-const Template: ComponentStory<typeof Box> = (args) => <Box {...args} />;
+export const Default = createStory(Box);
+Default.args = {
+  children: [<div>One</div>, <div>Two</div>],
+};
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: "Box",
+export const WithDirectionColumn = createStory(Box);
+WithDirectionColumn.args = {
+  children: [<div>One</div>, <div>Two</div>],
+  direction: "column",
 };
