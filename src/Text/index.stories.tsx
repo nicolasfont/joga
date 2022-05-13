@@ -9,7 +9,7 @@ export default {
 export const Primary = () => <Text>This is some text.</Text>;
 
 export const LongText = () => (
-  <Text>
+  <Text align="center" justify="center">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc
     scelerisque viverra mauris in aliquam. Tincidunt tortor aliquam nulla

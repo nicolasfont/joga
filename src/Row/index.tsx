@@ -1,7 +1,5 @@
 import { Box, BoxProps } from "../Box";
 
-export type RowProps = Omit<BoxProps, "direction">;
+export type RowProps = BoxProps;
 
-export const Row = ({ ...props }: RowProps) => (
-  <Box {...props} direction="row" />
-);
+export const Row = ({ ...props }: RowProps) => <Box direction="row" {...props} />;

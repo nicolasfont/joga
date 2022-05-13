@@ -1,16 +1,14 @@
 import { css, cx } from "@emotion/css";
 import { ReactNode } from "react";
+import { Box, BoxProps } from "../Box";
 
-export type ButtonProps = {
-  children?: ReactNode;
-  className?: string;
+export type ButtonProps = BoxProps & {
   onClick?: () => void;
 };
 
 export const Button = ({ className, ...props }: ButtonProps) => (
-  <button
-    {...props}
-    type="button"
+  <Box
+    component="button"
     className={cx(
       css`
         background-color: #000;
@@ -18,7 +16,6 @@ export const Button = ({ className, ...props }: ButtonProps) => (
         border-radius: 4px;
         color: white;
         cursor: pointer;
-        display: inline-flex;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 14px;
         font-weight: 600;
@@ -30,5 +27,6 @@ export const Button = ({ className, ...props }: ButtonProps) => (
       `,
       className
     )}
+    {...props}
   />
 );

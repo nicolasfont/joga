@@ -1,8 +1,9 @@
 import { css, cx } from "@emotion/css";
-import { ReactNode } from "react";
+import { ReactNode, ElementType } from "react";
 
 export type BoxProps = {
   align?: "center" | "start" | "end";
+  display?: "flex" | "inline-flex";
   justify?:
     | "center"
     | "start"
@@ -12,6 +13,7 @@ export type BoxProps = {
     | "space-evenly";
   children?: ReactNode;
   className?: string;
+  component?: ElementType;
   direction?: "column" | "row";
   gap?: number;
 };
@@ -19,16 +21,17 @@ export type BoxProps = {
 export const Box = ({
   align,
   className,
+  component: Component = "div",
   direction,
+  display = "flex",
   gap,
   justify,
   ...props
 }: BoxProps) => (
-  <div
-    {...props}
+  <Component
     className={cx(
       css`
-        display: flex;
+        display: ${display};
         ${align && `align-items: ${align};`}
         ${direction && `flex-direction: ${direction};`}
         ${gap && `gap: ${gap}px;`}
@@ -36,5 +39,6 @@ export const Box = ({
       `,
       className
     )}
+    {...props}
   />
 );

@@ -1,7 +1,7 @@
 import { Box, BoxProps } from "../Box";
 
-export type StackProps = Omit<BoxProps, "direction">;
+export type StackProps = BoxProps;
 
 export const Stack = ({ ...props }: StackProps) => (
-  <Box {...props} direction="column" />
+  <Box direction="column" {...props} />
 );
