@@ -19,9 +19,8 @@ export const Button = ({ className, ...props }: ButtonProps) => {
           color: white;
           cursor: pointer;
           display: inline-flex;
-          font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial,
-            sans-serif;
-          font-size: 12px;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 14px;
           font-weight: 600;
           line-height: 1;
           min-width: min-content;

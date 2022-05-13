@@ -1,4 +1,4 @@
-import { css,cx } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { ReactNode } from "react";
 
 type BoxProps = {
