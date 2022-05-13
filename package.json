@@ -16,6 +16,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "prepare": "husky install",
+    "prepublishOnly": "npm run build",
     "start": "start-storybook -p 6006"
   },
   "peerDependencies": {
