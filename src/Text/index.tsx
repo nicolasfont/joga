@@ -1,8 +1,7 @@
 import { css, cx } from "@emotion/css";
-import { ReactNode } from "react";
 import { Box, BoxProps } from "../Box";
 
-export type TextProps = BoxProps & {};
+export type TextProps = BoxProps;
 
 export const Text = ({ className, ...props }: TextProps) => (
   <Box
