@@ -13,18 +13,21 @@ export const Button = ({ className, ...props }: ButtonProps) => {
       type="button"
       className={cx(
         css`
-          background-color: #1ea7fd;
+          background-color: #000;
           border: 0;
-          border-radius: 3em;
+          border-radius: 4px;
           color: white;
           cursor: pointer;
-          display: inline-block;
+          display: inline-flex;
           font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial,
             sans-serif;
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 1.6;
-          padding: 11px 20px;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 1;
+          min-width: min-content;
+          max-width: max-content;
+          padding: 8px;
+          text-transform: uppercase;
         `,
         className
       )}

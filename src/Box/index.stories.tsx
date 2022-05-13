@@ -1,19 +1,17 @@
 import { ComponentMeta } from "@storybook/react";
 import { Box } from "../Box";
-import { createStory } from "../createStory";
+import { Button } from "../Button";
 
 export default {
   title: "Box",
   component: Box,
 } as ComponentMeta<typeof Box>;
 
-export const Default = createStory(Box);
-Default.args = {
-  children: [<div>One</div>, <div>Two</div>],
-};
+export const Default = () => <Box>Box</Box>;
 
-export const WithDirectionColumn = createStory(Box);
-WithDirectionColumn.args = {
-  children: [<div>One</div>, <div>Two</div>],
-  direction: "column",
-};
+export const ButtonStack = () => (
+  <Box direction="column" gap={8}>
+    <Button>One</Button>
+    <Button>Two</Button>
+  </Box>
+);
