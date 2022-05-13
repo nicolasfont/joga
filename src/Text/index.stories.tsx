@@ -25,3 +25,7 @@ export const LongText = () => (
     turpis egestas. Pellentesque sit amet porttitor eget dolor morbi non arcu.
   </Text>
 );
+
+export const Bold = () => <Text weight={600}>This is some bold text.</Text>;
+
+export const Larger = () => <Text size={32}>This is some large text.</Text>;

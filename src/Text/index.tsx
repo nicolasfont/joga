@@ -4,18 +4,29 @@ import { ReactNode } from "react";
 export type TextProps = {
   children?: ReactNode;
   className?: string;
+  family?: string;
+  lineHeight?: number;
+  size?: number;
+  weight?: number;
 };
 
-export const Text = ({ className, ...props }: TextProps) => (
+export const Text = ({
+  className,
+  family = '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  lineHeight = 1.6,
+  size = 14,
+  weight = 400,
+  ...props
+}: TextProps) => (
   <span
     {...props}
     className={cx(
       css`
         display: inline-flex;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.6;
+        font-family: ${family};
+        font-size: ${size}px;
+        font-weight: ${weight};
+        line-height: ${lineHeight};
       `,
       className
     )}
