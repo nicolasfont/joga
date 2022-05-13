@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import { ComponentMeta } from "@storybook/react";
 import { Text } from "../Text";
 

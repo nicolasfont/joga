@@ -13,6 +13,7 @@ export type BoxProps = {
     | "space-evenly";
   children?: ReactNode;
   className?: string;
+  classNames?: Array<string | undefined>;
   component?: ElementType;
   direction?: "column" | "row";
   gap?: number;
@@ -21,6 +22,7 @@ export type BoxProps = {
 export const Box = ({
   align,
   className,
+  classNames = [],
   component: Component = "div",
   direction,
   display = "flex",
@@ -37,7 +39,8 @@ export const Box = ({
         ${gap && `gap: ${gap}px;`}
         ${justify && `justify-content: ${justify};`}
       `,
-      className
+      className,
+      ...classNames
     )}
     {...props}
   />

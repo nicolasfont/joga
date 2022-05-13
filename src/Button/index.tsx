@@ -1,5 +1,4 @@
-import { css, cx } from "@emotion/css";
-import { ReactNode } from "react";
+import { css } from "@emotion/css";
 import { Box, BoxProps } from "../Box";
 
 export type ButtonProps = BoxProps & {
@@ -9,7 +8,7 @@ export type ButtonProps = BoxProps & {
 export const Button = ({ className, ...props }: ButtonProps) => (
   <Box
     component="button"
-    className={cx(
+    classNames={[
       css`
         background-color: #000;
         border: 0;
@@ -25,8 +24,8 @@ export const Button = ({ className, ...props }: ButtonProps) => (
         padding: 8px;
         text-transform: uppercase;
       `,
-      className
-    )}
+      className,
+    ]}
     {...props}
   />
 );
