@@ -27,6 +27,8 @@ export const Text = ({
         font-size: ${size}px;
         font-weight: ${weight};
         line-height: ${lineHeight};
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       `,
       className
     )}
