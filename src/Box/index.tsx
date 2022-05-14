@@ -13,6 +13,7 @@ export type BoxProps = {
   children?: ReactNode;
   className?: string;
   direction?: "column" | "row";
+  flex?: string;
   gap?: number;
   padding?: number;
 };
@@ -21,6 +22,7 @@ export const Box = ({
   align,
   className,
   direction,
+  flex,
   gap,
   justify,
   padding,
@@ -33,6 +35,7 @@ export const Box = ({
         display: flex;
         ${align && `align-items: ${align};`}
         ${direction && `flex-direction: ${direction};`}
+        ${flex && `flex: ${flex};`}
         ${gap && `gap: ${gap}px;`}
         ${justify && `justify-content: ${justify};`}
         ${padding && `padding: ${padding}px;`}
