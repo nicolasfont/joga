@@ -20,8 +20,6 @@ export const Button = ({ className, children, ...props }: ButtonProps) => (
         color: white;
         cursor: pointer;
         display: inline-flex;
-        min-width: min-content;
-        max-width: max-content;
         padding: 8px;
         text-transform: uppercase;
       `,
