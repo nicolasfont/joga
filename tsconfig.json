@@ -3,5 +3,6 @@
   "compilerOptions": {
     "jsx": "react-jsx"
   },
+  "exclude": ["node_modules"],
   "include": ["src"]
 }
