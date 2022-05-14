@@ -1,0 +1,22 @@
+{
+  "name": "joga-cli",
+  "version": "0.10.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "joga": "index.js"
+  },
+  "scripts": {
+    "start": "ts-node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite-dts": "^1.0.4",
+    "yargs": "^17.5.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}

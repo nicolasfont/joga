@@ -13,7 +13,10 @@
     "dist",
     "src"
   ],
-  "bin": "./cli/index.js",
+  "bin": "joga",
+  "workspaces": [
+    "cli"
+  ],
   "scripts": {
     "build": "tsc && vite build",
     "cli": "joga",
@@ -26,7 +29,9 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@emotion/css": "^11.9.0"
+    "@emotion/css": "^11.9.0",
+    "yargs": "^17.5.0",
+    "vite-dts": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
@@ -47,8 +52,7 @@
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9",
-    "vite-dts": "^1.0.4"
+    "vite": "^2.9.9"
   },
   "lint-staged": {
     "*.{js,ts,md,mdx,html,json}": "prettier --write"
