@@ -1,6 +1,6 @@
 {
   "name": "joga",
-  "version": "0.9.3",
+  "version": "0.10.0",
   "main": "./dist/joga.umd.js",
   "module": "./dist/joga.es.js",
   "exports": {
