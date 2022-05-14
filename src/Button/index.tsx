@@ -1,5 +1,6 @@
 import { css, cx } from "@emotion/css";
 import { ReactNode } from "react";
+import { Heading } from "../Heading";
 
 export type ButtonProps = {
   children?: ReactNode;
@@ -7,7 +8,7 @@ export type ButtonProps = {
   onClick?: () => void;
 };
 
-export const Button = ({ className, ...props }: ButtonProps) => (
+export const Button = ({ className, children, ...props }: ButtonProps) => (
   <button
     {...props}
     type="button"
@@ -19,10 +20,6 @@ export const Button = ({ className, ...props }: ButtonProps) => (
         color: white;
         cursor: pointer;
         display: inline-flex;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1;
         min-width: min-content;
         max-width: max-content;
         padding: 8px;
@@ -30,5 +27,7 @@ export const Button = ({ className, ...props }: ButtonProps) => (
       `,
       className
     )}
-  />
+  >
+    <Heading>{children}</Heading>
+  </button>
 );
