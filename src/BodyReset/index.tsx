@@ -15,5 +15,5 @@ export const BodyReset = ({ children }: BodyResetProps) => {
           flex: 1;
       }`;
   }, []);
-  return children;
+  return <>{children}</>;
 };
