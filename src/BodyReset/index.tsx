@@ -2,7 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { injectGlobal } from "@emotion/css";
 
 type BodyResetProps = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export const BodyReset = ({ children }: BodyResetProps) => {
