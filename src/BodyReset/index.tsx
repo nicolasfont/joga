@@ -1,7 +1,11 @@
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { injectGlobal } from "@emotion/css";
 
-export const BodyReset = () => {
+type BodyResetProps = {
+  children: ReactNode;
+};
+
+export const BodyReset = ({ children }: BodyResetProps) => {
   useEffect(() => {
     injectGlobal`
       body {
@@ -11,5 +15,5 @@ export const BodyReset = () => {
           flex: 1;
       }`;
   }, []);
-  return null;
+  return children;
 };
