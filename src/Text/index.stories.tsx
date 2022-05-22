@@ -28,4 +28,4 @@ export const LongText = () => (
 
 export const Bold = () => <Text weight={600}>This is some bold text.</Text>;
 
-export const Larger = () => <Text size={32}>This is some large text.</Text>;
+export const Larger = () => <Text size={2}>This is some large text.</Text>;

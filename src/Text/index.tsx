@@ -6,6 +6,9 @@ export type TextProps = {
   className?: string;
   family?: string;
   lineHeight?: number;
+  /**
+   * Size in rems
+   */
   size?: number;
   weight?: number;
 };
@@ -14,7 +17,7 @@ export const Text = ({
   className,
   family = '"Helvetica Neue", Helvetica, Arial, sans-serif',
   lineHeight = 1.6,
-  size = 14,
+  size = 1,
   weight = 400,
   ...props
 }: TextProps) => (
@@ -24,7 +27,7 @@ export const Text = ({
       css`
         display: inline-flex;
         font-family: ${family};
-        font-size: ${size}px;
+        font-size: ${size}rem;
         font-weight: ${weight};
         line-height: ${lineHeight};
         -webkit-font-smoothing: antialiased;
