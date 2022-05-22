@@ -9,10 +9,10 @@ export const BodyReset = ({ children }: BodyResetProps) => {
   useEffect(() => {
     injectGlobal`
       body {
-          margin: 0;
-          height: 100vh;
-          display: flex;
-          flex: 1;
+        display: flex;
+        flex: 1;
+        height: 100vh;
+        margin: 0;
       }`;
   }, []);
   return <>{children}</>;
