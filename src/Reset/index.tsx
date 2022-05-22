@@ -1,14 +1,21 @@
 import { ReactNode, useEffect } from "react";
 import { injectGlobal } from "@emotion/css";
 
-type BodyResetProps = {
+type ResetProps = {
   children?: ReactNode;
+  /**
+   * CSS selectors for the elements to reset
+   */
+  targets?: string[];
 };
 
-export const BodyReset = ({ children }: BodyResetProps) => {
+export const Reset = ({
+  children,
+  targets = ["body", "#root"],
+}: ResetProps) => {
   useEffect(() => {
     injectGlobal`
-      body {
+      ${targets.join(",")} {
         display: flex;
         flex: 1;
         height: 100vh;
