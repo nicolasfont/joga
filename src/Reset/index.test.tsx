@@ -27,6 +27,7 @@ describe("Reset", () => {
 });
 
 const expectElementToHaveResetStyles = (element: Element | null) => {
+  expect(element).toHaveStyle("box-sizing: border-box");
   expect(element).toHaveStyle("display: flex");
   expect(element).toHaveStyle("flex: 1");
   expect(element).toHaveStyle("height: 100vh");

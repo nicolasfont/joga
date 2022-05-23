@@ -16,6 +16,7 @@ export const Reset = ({
   useEffect(() => {
     injectGlobal`
       ${targets.join(",")} {
+        box-sizing: border-box;
         display: flex;
         flex: 1;
         height: 100vh;
