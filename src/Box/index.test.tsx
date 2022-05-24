@@ -125,4 +125,11 @@ describe("Box", () => {
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("padding: 8px");
   });
+
+  it("Should render with border", () => {
+    render(<Box border={1}>Lorem ipsum</Box>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("border: 1px solid");
+  });
 });

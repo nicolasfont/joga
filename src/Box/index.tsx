@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 
 export type BoxProps = {
   align?: "center" | "start" | "end";
+  border?: number;
   justify?:
     | "center"
     | "start"
@@ -20,6 +21,7 @@ export type BoxProps = {
 
 export const Box = ({
   align,
+  border,
   className,
   direction,
   flex,
@@ -34,6 +36,7 @@ export const Box = ({
       css`
         display: flex;
         ${align && `align-items: ${align};`}
+        ${border && `border: ${border}px solid;`}
         ${direction && `flex-direction: ${direction};`}
         ${flex && `flex: ${flex};`}
         ${gap && `gap: ${gap}px;`}
