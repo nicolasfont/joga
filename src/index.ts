@@ -3,6 +3,7 @@ export * from "./Button";
 export * from "./Heading";
 export * from "./Reset";
 export * from "./Row";
+export * from "./Separator";
 export * from "./Stack";
 export * from "./Text";
 
