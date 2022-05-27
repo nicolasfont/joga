@@ -1,11 +1,11 @@
 import { css, cx } from "@emotion/css";
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 import { Heading } from "../Heading";
 
 export type ButtonProps = {
   children?: ReactNode;
   className?: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 export const Button = ({ className, children, ...props }: ButtonProps) => (
