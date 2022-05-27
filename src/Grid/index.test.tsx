@@ -10,6 +10,13 @@ describe("Grid", () => {
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: grid");
   });
 
+  it("Should render with className", () => {
+    render(<Grid className="test-class">Lorem ipsum</Grid>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: grid");
+    expect(screen.getByText("Lorem ipsum")).toHaveClass("test-class");
+  });
+
   it("Should render with columns", () => {
     render(
       <Grid columns="auto 1fr auto">
