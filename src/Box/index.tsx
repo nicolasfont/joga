@@ -3,7 +3,13 @@ import { ReactNode } from "react";
 
 export type BoxProps = {
   align?: "center" | "start" | "end";
+  area?: string;
   border?: number;
+  children?: ReactNode;
+  className?: string;
+  direction?: "column" | "row";
+  flex?: string;
+  gap?: number;
   justify?:
     | "center"
     | "start"
@@ -11,16 +17,12 @@ export type BoxProps = {
     | "space-around"
     | "space-between"
     | "space-evenly";
-  children?: ReactNode;
-  className?: string;
-  direction?: "column" | "row";
-  flex?: string;
-  gap?: number;
   padding?: number;
 };
 
 export const Box = ({
   align,
+  area,
   border,
   className,
   direction,
@@ -36,6 +38,7 @@ export const Box = ({
       css`
         display: flex;
         ${align && `align-items: ${align};`}
+        ${area && `grid-area: ${area};`}
         ${border && `border: ${border}px solid;`}
         ${direction && `flex-direction: ${direction};`}
         ${flex && `flex: ${flex};`}

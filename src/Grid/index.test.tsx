@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Grid } from "../Grid";
 import { Text } from "../Text";
+import { Box } from "../Box";
 
 describe("Grid", () => {
   it("Should render with default props", () => {
@@ -52,16 +53,28 @@ describe("Grid", () => {
           "footer footer"
         `}
       >
-        <Text>Lorem</Text>
-        <Text>ipsum</Text>
-        <Text>dolor</Text>
+        <Box area="header">
+          <Text>Lorem</Text>
+        </Box>
+        <Box area="side">
+          <Text>ipsum</Text>
+        </Box>
+        <Box area="main">
+          <Text>dolor</Text>
+        </Box>
+        <Box area="footer">
+          <Text>sit</Text>
+        </Box>
       </Grid>
     );
     expect(screen.getByText("Lorem")).toBeInTheDocument();
     expect(screen.getByText("ipsum")).toBeInTheDocument();
     expect(screen.getByText("dolor")).toBeInTheDocument();
-    expect(screen.getByText("Lorem").parentNode).toHaveStyle("display: grid");
-    expect(screen.getByText("Lorem").parentNode).toHaveStyle(
+    expect(screen.getByText("sit")).toBeInTheDocument();
+    expect(screen.getByText("Lorem").parentNode?.parentNode).toHaveStyle(
+      "display: grid"
+    );
+    expect(screen.getByText("Lorem").parentNode?.parentNode).toHaveStyle(
       `grid-template-areas: "header header" "side main" "footer footer"`
     );
   });

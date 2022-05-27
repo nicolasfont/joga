@@ -132,4 +132,11 @@ describe("Box", () => {
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("border: 1px solid");
   });
+
+  it("Should render with area", () => {
+    render(<Box area="header">Lorem ipsum</Box>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("grid-area: header");
+  });
 });
