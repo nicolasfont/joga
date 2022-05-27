@@ -11,25 +11,25 @@ export default {
 
 export const Default = () => (
   <Grid gap={8}>
-    <Text>Lorem</Text>
-    <Text>ipsum</Text>
-    <Text>dolor</Text>
+    <Button>Lorem</Button>
+    <Button>ipsum</Button>
+    <Button>dolor</Button>
   </Grid>
 );
 
 export const Columns = () => (
   <Grid columns="auto 1fr auto" gap={8}>
-    <Text>Lorem</Text>
-    <Text>ipsum</Text>
-    <Text>dolor</Text>
+    <Button>Lorem</Button>
+    <Button>ipsum</Button>
+    <Button>dolor</Button>
   </Grid>
 );
 
 export const Rows = () => (
   <Grid rows="auto 1fr auto" gap={8}>
-    <Text>Lorem</Text>
-    <Text>ipsum</Text>
-    <Text>dolor</Text>
+    <Button>Lorem</Button>
+    <Button>ipsum</Button>
+    <Button>dolor</Button>
   </Grid>
 );
 
