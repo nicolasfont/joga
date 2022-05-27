@@ -1,5 +1,8 @@
 import { ComponentMeta } from "@storybook/react";
 import { Grid, Text } from "..";
+import { Box } from "../Box";
+import { Button } from "../Button";
+import { Stack } from "../Stack";
 
 export default {
   title: "Grid",
@@ -7,13 +10,15 @@ export default {
 } as ComponentMeta<typeof Grid>;
 
 export const Default = () => (
-  <Grid>
-    <Text>Lorem ipsum</Text>
+  <Grid gap={8}>
+    <Text>Lorem</Text>
+    <Text>ipsum</Text>
+    <Text>dolor</Text>
   </Grid>
 );
 
 export const Columns = () => (
-  <Grid columns="auto 1fr auto">
+  <Grid columns="auto 1fr auto" gap={8}>
     <Text>Lorem</Text>
     <Text>ipsum</Text>
     <Text>dolor</Text>
@@ -21,9 +26,34 @@ export const Columns = () => (
 );
 
 export const Rows = () => (
-  <Grid rows="auto 1fr auto">
+  <Grid rows="auto 1fr auto" gap={8}>
     <Text>Lorem</Text>
     <Text>ipsum</Text>
     <Text>dolor</Text>
+  </Grid>
+);
+
+export const Areas = () => (
+  <Grid
+    areas={`
+      "header header"
+      "side main"
+      "footer footer"
+    `}
+    columns="auto 1fr"
+    gap={8}
+  >
+    <Stack area="header">
+      <Button>Header</Button>
+    </Stack>
+    <Stack area="side">
+      <Button>Sidebar</Button>
+    </Stack>
+    <Stack area="main">
+      <Button>Main</Button>
+    </Stack>
+    <Stack area="footer">
+      <Button>Footer</Button>
+    </Stack>
   </Grid>
 );
