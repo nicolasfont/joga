@@ -1,5 +1,4 @@
 import { css, cx } from "@emotion/css";
-import { ReactNode } from "react";
 
 export type TextInputProps = {
   className?: string;
