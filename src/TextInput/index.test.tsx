@@ -3,10 +3,6 @@ import "@testing-library/jest-dom";
 import { TextInput } from "../TextInput";
 
 describe("TextInput", () => {
-  afterEach(() => {
-    cleanup();
-  });
-
   it("should render with default props", () => {
     render(<TextInput placeholder="Lorem ipsum" />);
 
@@ -33,7 +29,7 @@ describe("TextInput", () => {
 
     expect(screen.getByPlaceholderText("Lorem ipsum")).toBeInTheDocument();
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange.mock.lastCall[0].target.value).toEqual("a");
+    expect(onChange.mock.lastCall[0]).toEqual("a");
   });
 
   it("should render with value", async () => {
