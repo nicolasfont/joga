@@ -10,7 +10,6 @@ export type TextInputProps = {
 export const TextInput = ({
   className,
   onChange = () => {},
-  value,
   ...props
 }: TextInputProps) => (
   <input
@@ -22,7 +21,6 @@ export const TextInput = ({
       `,
       className
     )}
-    value={value}
     onChange={(e) => {
       onChange(e.target.value);
     }}
