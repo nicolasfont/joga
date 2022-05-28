@@ -1,5 +1,6 @@
 export * from "./Box";
 export * from "./Button";
+export * from "./Checkbox";
 export * from "./Grid";
 export * from "./Heading";
 export * from "./Reset";
