@@ -31,7 +31,7 @@ export const Select = ({
     value={value === undefined ? "" : hash(value)}
   >
     {placeholder && (
-      <option disabled hidden selected={value === undefined} value="">
+      <option disabled hidden value="">
         {placeholder}
       </option>
     )}
