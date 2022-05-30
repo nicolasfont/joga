@@ -5,7 +5,7 @@ export type SelectProps = {
   className?: string;
   value?: {};
   onChange?: (value?: {}) => void;
-  options?: { label: string; value?: {} }[];
+  options?: { label: string; value: {} }[];
   placeholder?: string;
 };
 
@@ -28,6 +28,7 @@ export const Select = ({
     onChange={(e) => {
       onChange(options?.[e.target.selectedIndex]?.value);
     }}
+    value={value === undefined ? "" : hash(value)}
   >
     {placeholder && (
       <option disabled hidden selected={value === undefined} value="">
@@ -35,13 +36,9 @@ export const Select = ({
       </option>
     )}
     {options.map((option) => {
-      const key = option.value !== undefined ? hash(option.value) : undefined;
+      const key = hash(option.value);
       return (
-        <option
-          key={key}
-          value={key}
-          selected={value !== undefined ? key === hash(value) : undefined}
-        >
+        <option key={key} value={key}>
           {option.label}
         </option>
       );
