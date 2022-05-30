@@ -69,3 +69,23 @@ export const WithPlaceholderAndValue = () => (
     ]}
   />
 );
+
+export const WithOnChange = () => (
+  <Select
+    placeholder="Select something"
+    value={2}
+    options={[
+      {
+        label: "Option 1",
+        value: 1,
+      },
+      {
+        label: "Option 2",
+        value: 2,
+      },
+    ]}
+    onChange={(value) => {
+      console.log(value);
+    }}
+  />
+);

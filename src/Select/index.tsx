@@ -3,9 +3,9 @@ import { hash } from "../utils";
 
 export type SelectProps = {
   className?: string;
-  value?: {};
-  onChange?: (value?: {}) => void;
-  options?: { label: string; value: {} }[];
+  value?: any;
+  onChange?: (value?: any) => void;
+  options?: { label: string; value: any }[];
   placeholder?: string;
 };
 
