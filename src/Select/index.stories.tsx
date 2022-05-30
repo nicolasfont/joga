@@ -69,22 +69,3 @@ export const WithPlaceholderAndValue = () => (
     ]}
   />
 );
-
-export const WithSelectablePlaceholder = () => (
-  <Select
-    options={[
-      {
-        label: "Select something",
-        value: "",
-      },
-      {
-        label: "Option 1",
-        value: 1,
-      },
-      {
-        label: "Option 2",
-        value: 2,
-      },
-    ]}
-  />
-);

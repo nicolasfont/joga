@@ -30,11 +30,7 @@ export const Select = ({
     }}
     value={value === undefined ? undefined : hash(value)}
   >
-    {placeholder && (
-      <option disabled hidden value="">
-        {placeholder}
-      </option>
-    )}
+    {placeholder && <option value="">{placeholder}</option>}
     {options.map((option) => {
       const key = hash(option.value);
       return (

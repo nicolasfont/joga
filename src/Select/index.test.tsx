@@ -32,9 +32,7 @@ describe("Select", () => {
     );
 
     expect(screen.getByRole("combobox")).toBeInTheDocument();
-    const options = screen.getAllByRole<HTMLOptionElement>("option", {
-      hidden: true,
-    });
+    const options = screen.getAllByRole<HTMLOptionElement>("option");
     expect(options).toHaveLength(2);
     expect(options[0].label).toEqual("Option 1");
     expect(options[0].value).toEqual("1");
@@ -60,9 +58,7 @@ describe("Select", () => {
     );
 
     expect(screen.getByRole("combobox")).toBeInTheDocument();
-    const options = screen.getAllByRole<HTMLOptionElement>("option", {
-      hidden: true,
-    });
+    const options = screen.getAllByRole<HTMLOptionElement>("option");
     expect(options).toHaveLength(2);
     expect(options[0].label).toEqual("Option 1");
     expect(options[0].value).toEqual("1");
@@ -75,9 +71,7 @@ describe("Select", () => {
     render(<Select placeholder="Select something" />);
 
     expect(screen.getByRole("combobox")).toBeInTheDocument();
-    const options = screen.getAllByRole<HTMLOptionElement>("option", {
-      hidden: true,
-    });
+    const options = screen.getAllByRole<HTMLOptionElement>("option");
     expect(options).toHaveLength(1);
     expect(options[0].label).toEqual("Select something");
     expect(options[0].value).toEqual("");
@@ -101,9 +95,7 @@ describe("Select", () => {
     );
 
     expect(screen.getByRole("combobox")).toBeInTheDocument();
-    const options = screen.getAllByRole<HTMLOptionElement>("option", {
-      hidden: true,
-    });
+    const options = screen.getAllByRole<HTMLOptionElement>("option");
     expect(options).toHaveLength(3);
     expect(options[0].label).toEqual("Select something");
     expect(options[0].value).toEqual("");
@@ -132,9 +124,7 @@ describe("Select", () => {
     );
 
     expect(screen.getByRole("combobox")).toBeInTheDocument();
-    const options = screen.getAllByRole<HTMLOptionElement>("option", {
-      hidden: true,
-    });
+    const options = screen.getAllByRole<HTMLOptionElement>("option");
     expect(options).toHaveLength(3);
     expect(options[0].label).toEqual("Select something");
     expect(options[0].value).toEqual("");
