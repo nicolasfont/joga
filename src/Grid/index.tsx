@@ -1,4 +1,4 @@
-import { css, cx } from "@emotion/css";
+import { css } from "@emotion/css";
 import { ElementType } from "react";
 import { Box, BoxProps } from "../Box";
 
@@ -17,14 +17,14 @@ export const Grid = <C extends ElementType>({
 }: GridProps<C>) => (
   <Box
     {...props}
-    className={cx(
+    classNames={[
       css`
         display: grid;
         ${columns && `grid-template-columns: ${columns};`}
         ${rows && `grid-template-rows: ${rows};`}
         ${areas && `grid-template-areas: ${areas};`}
       `,
-      className
-    )}
+      className,
+    ]}
   />
 );
