@@ -1,9 +1,8 @@
 import { css, cx } from "@emotion/css";
-import { ReactNode } from "react";
+import { ElementType, ReactNode } from "react";
+import { Box, BoxProps } from "../Box";
 
-export type TextProps = {
-  children?: ReactNode;
-  className?: string;
+export type TextProps<C extends ElementType> = BoxProps<C> & {
   family?: string;
   lineHeight?: number;
   /**
@@ -13,16 +12,17 @@ export type TextProps = {
   weight?: number;
 };
 
-export const Text = ({
+export const Text = <C extends ElementType>({
   className,
   family = '"Helvetica Neue", Helvetica, Arial, sans-serif',
   lineHeight = 1.6,
   size = 1,
   weight = 400,
   ...props
-}: TextProps) => (
-  <span
+}: TextProps<C>) => (
+  <Box
     {...props}
+    as="span"
     className={cx(
       css`
         display: inline-flex;

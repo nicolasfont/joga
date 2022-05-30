@@ -4,7 +4,6 @@ import { Box, BoxProps } from "../Box";
 
 export type GridProps<C extends ElementType> = BoxProps<C> & {
   columns?: string;
-  className?: string;
   rows?: string;
   areas?: string;
 };

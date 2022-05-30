@@ -1,26 +1,21 @@
 import { css, cx } from "@emotion/css";
+import { ChangeEvent, ElementType } from "react";
+import { Box, BoxProps } from "../Box";
 
-export type CheckboxProps = {
+export type CheckboxProps<C extends ElementType> = BoxProps<C> & {
   checked?: boolean;
-  className?: string;
   onChange?: (checked: boolean) => void;
 };
 
-export const Checkbox = ({
-  className,
+export const Checkbox = <C extends ElementType>({
   onChange = () => {},
   ...props
-}: CheckboxProps) => (
-  <input
+}: CheckboxProps<C>) => (
+  <Box
     {...props}
+    as="input"
     type="checkbox"
-    className={cx(
-      css`
-        display: inline-flex;
-      `,
-      className
-    )}
-    onChange={(e) => {
+    onChange={(e: ChangeEvent<HTMLInputElement>) => {
       onChange(e.target.checked);
     }}
   />

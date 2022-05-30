@@ -1,31 +1,26 @@
 import { css, cx } from "@emotion/css";
+import { ChangeEvent, ElementType } from "react";
+import { Box, BoxProps } from "../Box";
 import { hash } from "../utils";
 
-export type SelectProps = {
-  className?: string;
+export type SelectProps<C extends ElementType> = BoxProps<C> & {
   value?: any;
   onChange?: (value?: any) => void;
   options?: { label: string; value: any }[];
   placeholder?: string;
 };
 
-export const Select = ({
-  className,
+export const Select = <C extends ElementType>({
   onChange = () => {},
   value,
   options = [],
   placeholder,
   ...props
-}: SelectProps) => (
-  <select
+}: SelectProps<C>) => (
+  <Box
     {...props}
-    className={cx(
-      css`
-        display: inline-flex;
-      `,
-      className
-    )}
-    onChange={(e) => {
+    as="select"
+    onChange={(e: ChangeEvent<HTMLSelectElement>) => {
       onChange(options[e.target.selectedIndex + (placeholder ? -1 : 0)]?.value);
     }}
     value={value === undefined ? undefined : hash(value)}
@@ -39,5 +34,5 @@ export const Select = ({
         </option>
       );
     })}
-  </select>
+  </Box>
 );

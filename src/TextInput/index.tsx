@@ -1,27 +1,22 @@
 import { css, cx } from "@emotion/css";
+import { ChangeEvent, ElementType } from "react";
+import { Box, BoxProps } from "../Box";
 
-export type TextInputProps = {
-  className?: string;
+export type TextInputProps<C extends ElementType> = BoxProps<C> & {
   onChange?: (text: string) => void;
   placeholder?: string;
   value?: string;
 };
 
-export const TextInput = ({
-  className,
+export const TextInput = <C extends ElementType>({
   onChange = () => {},
   ...props
-}: TextInputProps) => (
-  <input
+}: TextInputProps<C>) => (
+  <Box
     {...props}
+    as="input"
     type="text"
-    className={cx(
-      css`
-        display: inline-flex;
-      `,
-      className
-    )}
-    onChange={(e) => {
+    onChange={(e: ChangeEvent<HTMLInputElement>) => {
       onChange(e.target.value);
     }}
   />

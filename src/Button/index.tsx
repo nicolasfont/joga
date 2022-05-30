@@ -1,17 +1,22 @@
 import { css, cx } from "@emotion/css";
-import { MouseEventHandler, ReactNode } from "react";
+import { ElementType, MouseEventHandler, ReactNode } from "react";
+import { Box, BoxProps } from "../Box";
 import { Heading } from "../Heading";
 
-export type ButtonProps = {
-  children?: ReactNode;
-  className?: string;
+export type ButtonProps<C extends ElementType> = BoxProps<C> & {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-export const Button = ({ className, children, ...props }: ButtonProps) => (
-  <button
+export const Button = <C extends ElementType>({
+  className,
+  children,
+  ...props
+}: ButtonProps<C>) => (
+  <Box
     {...props}
+    as="button"
     type="button"
+    padding={8}
     className={cx(
       css`
         background-color: #000;
@@ -19,13 +24,11 @@ export const Button = ({ className, children, ...props }: ButtonProps) => (
         border-radius: 4px;
         color: white;
         cursor: pointer;
-        display: inline-flex;
-        padding: 8px;
         text-transform: uppercase;
       `,
       className
     )}
   >
     <Heading>{children}</Heading>
-  </button>
+  </Box>
 );
