@@ -81,7 +81,6 @@ describe("Select", () => {
     expect(options).toHaveLength(1);
     expect(options[0].label).toEqual("Select something");
     expect(options[0].value).toEqual("");
-    expect(options[0].selected).toBe(true);
   });
 
   it("should render with placeholder and options", () => {
@@ -108,7 +107,6 @@ describe("Select", () => {
     expect(options).toHaveLength(3);
     expect(options[0].label).toEqual("Select something");
     expect(options[0].value).toEqual("");
-    expect(options[0].selected).toBe(true);
     expect(options[1].label).toEqual("Option 1");
     expect(options[1].value).toEqual("1");
     expect(options[2].label).toEqual("Option 2");
