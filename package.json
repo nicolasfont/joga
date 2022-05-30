@@ -1,6 +1,6 @@
 {
   "name": "joga",
-  "version": "0.22.3",
+  "version": "0.23.0",
   "license": "MIT",
   "main": "./dist/joga.umd.js",
   "module": "./dist/joga.es.js",
