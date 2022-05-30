@@ -26,9 +26,7 @@ export const Select = ({
       className
     )}
     onChange={(e) => {
-      onChange(
-        options?.[e.target.selectedIndex + (placeholder ? 1 : 0)]?.value
-      );
+      onChange(options[e.target.selectedIndex + (placeholder ? -1 : 0)]?.value);
     }}
     value={value === undefined ? "" : hash(value)}
   >

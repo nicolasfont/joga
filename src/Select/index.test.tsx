@@ -184,4 +184,36 @@ describe("Select", () => {
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange.mock.lastCall[0]).toEqual(2);
   });
+
+  it("should call onChange when changed and using placeholder", async () => {
+    const onChange = jest.fn();
+
+    render(
+      <Select
+        placeholder="Select something"
+        onChange={onChange}
+        options={[
+          {
+            label: "Option 1",
+            value: 1,
+          },
+          {
+            label: "Option 2",
+            value: 2,
+          },
+        ]}
+      />
+    );
+
+    await userEvent.selectOptions(
+      screen.getByRole("combobox"),
+      screen.getByRole("option", {
+        name: "Option 2",
+      })
+    );
+
+    expect(screen.getByRole("combobox")).toBeInTheDocument();
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange.mock.lastCall[0]).toEqual(2);
+  });
 });
