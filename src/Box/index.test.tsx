@@ -139,4 +139,19 @@ describe("Box", () => {
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("grid-area: header");
   });
+
+  it("Should render as anchor", () => {
+    render(
+      <Box as="a" href="https://jogajs.com">
+        Lorem ipsum
+      </Box>
+    );
+    expect(screen.getByRole("link")).toBeInTheDocument();
+    expect(screen.getByRole("link")).toHaveTextContent("Lorem ipsum");
+    expect(screen.getByRole("link")).toHaveStyle("display: flex");
+    expect(screen.getByRole("link")).toHaveAttribute(
+      "href",
+      "https://jogajs.com"
+    );
+  });
 });

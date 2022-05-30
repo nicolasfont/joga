@@ -12,3 +12,9 @@ export const Default = () => (
     <Text>Box</Text>
   </Box>
 );
+
+export const AsAnchor = () => (
+  <Box as="a" href="https://jogajs.com">
+    Click Me
+  </Box>
+);

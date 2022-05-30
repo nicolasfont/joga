@@ -1,28 +1,31 @@
 import { css, cx } from "@emotion/css";
-import { ReactNode } from "react";
+import { ElementType, ReactNode } from "react";
 
-export type BoxProps = {
-  align?: "center" | "start" | "end";
-  area?: string;
-  border?: number;
-  children?: ReactNode;
-  className?: string;
-  direction?: "column" | "row";
-  flex?: string;
-  gap?: number;
-  justify?:
-    | "center"
-    | "start"
-    | "end"
-    | "space-around"
-    | "space-between"
-    | "space-evenly";
-  padding?: number;
-};
+export type BoxProps<C extends ElementType> =
+  React.ComponentPropsWithoutRef<C> & {
+    align?: "center" | "start" | "end";
+    area?: string;
+    as?: C;
+    border?: number;
+    children?: ReactNode;
+    className?: string;
+    direction?: "column" | "row";
+    flex?: string;
+    gap?: number;
+    justify?:
+      | "center"
+      | "start"
+      | "end"
+      | "space-around"
+      | "space-between"
+      | "space-evenly";
+    padding?: number;
+  };
 
-export const Box = ({
+export const Box = <C extends ElementType = "div">({
   align,
   area,
+  as,
   border,
   className,
   direction,
@@ -31,22 +34,25 @@ export const Box = ({
   justify,
   padding,
   ...props
-}: BoxProps) => (
-  <div
-    {...props}
-    className={cx(
-      css`
-        display: flex;
-        ${align && `align-items: ${align};`}
-        ${area && `grid-area: ${area};`}
-        ${border && `border: ${border}px solid;`}
-        ${direction && `flex-direction: ${direction};`}
-        ${flex && `flex: ${flex};`}
-        ${gap && `gap: ${gap}px;`}
-        ${justify && `justify-content: ${justify};`}
-        ${padding && `padding: ${padding}px;`}
-      `,
-      className
-    )}
-  />
-);
+}: BoxProps<C>) => {
+  const Component = as || "div";
+  return (
+    <Component
+      {...props}
+      className={cx(
+        css`
+          display: flex;
+          ${align && `align-items: ${align};`}
+          ${area && `grid-area: ${area};`}
+          ${border && `border: ${border}px solid;`}
+          ${direction && `flex-direction: ${direction};`}
+          ${flex && `flex: ${flex};`}
+          ${gap && `gap: ${gap}px;`}
+          ${justify && `justify-content: ${justify};`}
+          ${padding && `padding: ${padding}px;`}
+        `,
+        className
+      )}
+    />
+  );
+};

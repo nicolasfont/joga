@@ -1,7 +1,8 @@
+import { ElementType } from "react";
 import { Box, BoxProps } from "../Box";
 
-export type RowProps = Omit<BoxProps, "direction">;
+export type RowProps<C extends ElementType> = Omit<BoxProps<C>, "direction">;
 
-export const Row = ({ ...props }: RowProps) => (
+export const Row = <C extends ElementType>({ ...props }: RowProps<C>) => (
   <Box {...props} direction="row" />
 );
