@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { Stack } from "../Stack";
 
 describe("Stack", () => {
-  it("Should render with default props", () => {
+  it("should render with default props", () => {
     render(<Stack>Lorem ipsum</Stack>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle(

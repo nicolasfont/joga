@@ -5,19 +5,19 @@ import { Text } from "../Text";
 import { Box } from "../Box";
 
 describe("Grid", () => {
-  it("Should render with default props", () => {
+  it("should render with default props", () => {
     render(<Grid>Lorem ipsum</Grid>);
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: grid");
   });
 
-  it("Should render with className", () => {
+  it("should render with className", () => {
     render(<Grid className="test-class">Lorem ipsum</Grid>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: grid");
     expect(screen.getByText("Lorem ipsum")).toHaveClass("test-class");
   });
 
-  it("Should render with columns", () => {
+  it("should render with columns", () => {
     render(
       <Grid columns="auto 1fr auto">
         <Text>Lorem</Text>
@@ -34,7 +34,7 @@ describe("Grid", () => {
     );
   });
 
-  it("Should render with rows", () => {
+  it("should render with rows", () => {
     render(
       <Grid rows="auto 1fr auto">
         <Text>Lorem</Text>
@@ -51,7 +51,7 @@ describe("Grid", () => {
     );
   });
 
-  it("Should render with areas", () => {
+  it("should render with areas", () => {
     render(
       <Grid
         areas={`
