@@ -1,10 +1,10 @@
 import { css } from "@emotion/css";
-import { ElementType, MouseEventHandler, ReactNode } from "react";
+import { ElementType } from "react";
 import { Box, BoxProps } from "../Box";
 import { Heading } from "../Heading";
 
 export type ButtonProps<C extends ElementType> = BoxProps<C> & {
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
 };
 
 export const Button = <C extends ElementType>({
