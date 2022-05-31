@@ -26,7 +26,7 @@ export const Select = <C extends ElementType>({
     value={value === undefined ? undefined : hash(value)}
   >
     {placeholder && <option value="">{placeholder}</option>}
-    {options.map((option) => {
+    {options.map((option: { label: string; value: any }) => {
       const key = hash(option.value);
       return (
         <option key={key} value={key}>
