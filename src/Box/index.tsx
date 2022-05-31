@@ -6,6 +6,7 @@ export type BoxProps<C extends ElementType> =
     align?: "center" | "start" | "end";
     area?: string;
     as?: C;
+    backgroundColor?: string;
     border?: number;
     children?: ReactNode;
     className?: string;
@@ -26,6 +27,7 @@ export const Box = <C extends ElementType = "div">({
   align,
   area,
   as,
+  backgroundColor,
   border,
   className,
   direction,
@@ -43,6 +45,7 @@ export const Box = <C extends ElementType = "div">({
           display: flex;
           ${align && `align-items: ${align};`}
           ${area && `grid-area: ${area};`}
+          ${backgroundColor && `background-color: ${backgroundColor};`}
           ${border && `border: ${border}px solid;`}
           ${direction && `flex-direction: ${direction};`}
           ${flex && `flex: ${flex};`}

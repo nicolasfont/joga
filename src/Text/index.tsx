@@ -3,6 +3,7 @@ import { ElementType } from "react";
 import { Box, BoxProps } from "../Box";
 
 export type TextProps<C extends ElementType> = BoxProps<C> & {
+  color?: string;
   family?: string;
   lineHeight?: number;
   /**
@@ -14,6 +15,7 @@ export type TextProps<C extends ElementType> = BoxProps<C> & {
 
 export const Text = <C extends ElementType>({
   className,
+  color = "#333",
   family = '"Helvetica Neue", Helvetica, Arial, sans-serif',
   lineHeight = 1.6,
   size = 1,
@@ -24,6 +26,7 @@ export const Text = <C extends ElementType>({
     as="span"
     className={cx(
       css`
+        color: ${color};
         display: inline-flex;
         font-family: ${family};
         font-size: ${size}rem;

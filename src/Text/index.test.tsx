@@ -50,4 +50,11 @@ describe("Text", () => {
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("font-weight: 500");
   });
+
+  it("should render with color", () => {
+    render(<Text color="#fff">Lorem ipsum</Text>);
+
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("color: #fff");
+  });
 });

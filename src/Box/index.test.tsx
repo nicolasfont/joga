@@ -140,6 +140,15 @@ describe("Box", () => {
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("grid-area: header");
   });
 
+  it("should render with backgroundColor", () => {
+    render(<Box backgroundColor="#333">Lorem ipsum</Box>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
+      "background-color: #333"
+    );
+  });
+
   it("should render as anchor", () => {
     render(
       <Box as="a" href="https://jogajs.com">

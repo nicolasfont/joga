@@ -16,12 +16,12 @@ export const Button = <C extends ElementType>({
     type="button"
     padding={8}
     weight={500}
+    color="#fff"
+    backgroundColor="#333"
     className={cx(
       css`
-        background-color: #000;
         border: 0;
         border-radius: 4px;
-        color: white;
         cursor: pointer;
       `,
       className
