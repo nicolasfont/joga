@@ -2,9 +2,9 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { Select } from "../Select";
-import { hash } from "../utils";
+import { hash } from "./hash";
 
-jest.mock("../utils");
+jest.mock("./hash");
 
 jest.mocked(hash).mockImplementation((value: {}) => String(value));
 
