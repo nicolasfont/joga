@@ -1,26 +1,26 @@
 import { css, cx } from "@emotion/css";
 import { ElementType, ReactNode } from "react";
 
-export type BoxProps<C extends ElementType> = React.ComponentPropsWithoutRef<C> & {
-  align?: "center" | "start" | "end";
-  area?: string;
-  as?: C;
-  border?: number;
-  children?: ReactNode;
-  className?: string;
-  classNames?: Array<string | undefined>;
-  direction?: "column" | "row";
-  flex?: string;
-  gap?: number;
-  justify?:
-    | "center"
-    | "start"
-    | "end"
-    | "space-around"
-    | "space-between"
-    | "space-evenly";
-  padding?: number;
-};
+export type BoxProps<C extends ElementType> =
+  React.ComponentPropsWithoutRef<C> & {
+    align?: "center" | "start" | "end";
+    area?: string;
+    as?: C;
+    border?: number;
+    children?: ReactNode;
+    className?: string;
+    direction?: "column" | "row";
+    flex?: string;
+    gap?: number;
+    justify?:
+      | "center"
+      | "start"
+      | "end"
+      | "space-around"
+      | "space-between"
+      | "space-evenly";
+    padding?: number;
+  };
 
 export const Box = <C extends ElementType = "div">({
   align,
@@ -28,7 +28,6 @@ export const Box = <C extends ElementType = "div">({
   as,
   border,
   className,
-  classNames = [],
   direction,
   flex,
   gap,
@@ -51,7 +50,6 @@ export const Box = <C extends ElementType = "div">({
           ${justify && `justify-content: ${justify};`}
           ${padding && `padding: ${padding}px;`}
         `,
-        ...classNames,
         className
       )}
       {...props}

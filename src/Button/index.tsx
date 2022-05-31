@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
 import { Box, BoxProps } from "../Box";
 import { Heading } from "../Heading";
@@ -16,7 +16,7 @@ export const Button = <C extends ElementType>({
     as="button"
     type="button"
     padding={8}
-    classNames={[
+    className={cx(
       css`
         background-color: #000;
         border: 0;
@@ -25,8 +25,8 @@ export const Button = <C extends ElementType>({
         cursor: pointer;
         text-transform: uppercase;
       `,
-      className,
-    ]}
+      className
+    )}
     {...props}
   >
     <Heading>{children}</Heading>
