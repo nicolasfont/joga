@@ -90,6 +90,52 @@ export const WithOnChange = () => (
   />
 );
 
+export const WithNumberValues = () => (
+  <Select
+    placeholder="How many?"
+    options={[
+      {
+        label: "1",
+        value: 1,
+      },
+      {
+        label: "2",
+        value: 2,
+      },
+      {
+        label: "3",
+        value: 3,
+      },
+    ]}
+    onChange={(value: number) => {
+      console.log(value);
+    }}
+  />
+);
+
+export const WithStringValues = () => (
+  <Select
+    placeholder="What color?"
+    options={[
+      {
+        label: "Red",
+        value: "red",
+      },
+      {
+        label: "Green",
+        value: "green",
+      },
+      {
+        label: "Blue",
+        value: "blue",
+      },
+    ]}
+    onChange={(value: string) => {
+      console.log(value);
+    }}
+  />
+);
+
 export const WithBooleanValues = () => (
   <Select
     placeholder="Is it it?"
@@ -104,6 +150,29 @@ export const WithBooleanValues = () => (
       },
     ]}
     onChange={(value: boolean) => {
+      console.log(value);
+    }}
+  />
+);
+
+export const WithObjectValues = () => (
+  <Select
+    placeholder="Who?"
+    options={[
+      {
+        label: "Jack",
+        value: { name: "Jack" },
+      },
+      {
+        label: "Jane",
+        value: { name: "Jane" },
+      },
+      {
+        label: "John",
+        value: { name: "John" },
+      },
+    ]}
+    onChange={(value: { name: string }) => {
       console.log(value);
     }}
   />
