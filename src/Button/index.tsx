@@ -7,6 +7,10 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 };
 
 export const Button = <C extends ElementType>({
+  padding = 8,
+  weight = 500,
+  color = "#fff",
+  backgroundColor = "#333",
   className,
   children,
   ...props
@@ -14,10 +18,10 @@ export const Button = <C extends ElementType>({
   <Text
     as="button"
     type="button"
-    padding={8}
-    weight={500}
-    color="#fff"
-    backgroundColor="#333"
+    padding={padding}
+    weight={weight}
+    color={color}
+    backgroundColor={backgroundColor}
     className={cx(
       css`
         border: 0;

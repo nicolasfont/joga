@@ -1,8 +1,9 @@
 import { ElementType } from "react";
 import { Text, TextProps } from "../Text";
 
-export type HeadingProps<C extends ElementType> = Omit<TextProps<C>, "weight">;
+export type HeadingProps<C extends ElementType> = TextProps<C>;
 
-export const Heading = <C extends ElementType>({ ...props }: HeadingProps<C>) => (
-  <Text weight={600} {...props} />
-);
+export const Heading = <C extends ElementType>({
+  weight = 600,
+  ...props
+}: HeadingProps<C>) => <Text weight={weight} {...props} />;
