@@ -1,9 +1,8 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
-import { Box, BoxProps } from "../Box";
-import { Heading } from "../Heading";
+import { Text, TextProps } from "../Text";
 
-export type ButtonProps<C extends ElementType> = BoxProps<C> & {
+export type ButtonProps<C extends ElementType> = TextProps<C> & {
   onClick?: () => void;
 };
 
@@ -12,10 +11,11 @@ export const Button = <C extends ElementType>({
   children,
   ...props
 }: ButtonProps<C>) => (
-  <Box
+  <Text
     as="button"
     type="button"
     padding={8}
+    weight={500}
     className={cx(
       css`
         background-color: #000;
@@ -23,12 +23,11 @@ export const Button = <C extends ElementType>({
         border-radius: 4px;
         color: white;
         cursor: pointer;
-        text-transform: uppercase;
       `,
       className
     )}
     {...props}
   >
-    <Heading>{children}</Heading>
-  </Box>
+    {children}
+  </Text>
 );
