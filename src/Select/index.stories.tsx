@@ -89,3 +89,22 @@ export const WithOnChange = () => (
     }}
   />
 );
+
+export const WithBooleanValues = () => (
+  <Select
+    placeholder="Is it it?"
+    options={[
+      {
+        label: "Yes",
+        value: true,
+      },
+      {
+        label: "No",
+        value: false,
+      },
+    ]}
+    onChange={(value: boolean) => {
+      console.log(value);
+    }}
+  />
+);

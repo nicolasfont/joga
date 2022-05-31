@@ -3,9 +3,9 @@ import { Box, BoxProps } from "../Box";
 import { hash } from "./hash";
 
 export type SelectProps<C extends ElementType> = BoxProps<C> & {
-  value?: any;
-  onChange?: (value?: any) => void;
-  options?: { label: string; value: any }[];
+  value?: {};
+  onChange?: (value?: {}) => void;
+  options?: { label: string; value: {} }[];
   placeholder?: string;
 };
 
@@ -32,7 +32,7 @@ export const Select = forwardRef(
       ref={ref}
     >
       {placeholder && <option value="">{placeholder}</option>}
-      {options.map((option: { label: string; value: any }) => {
+      {options.map((option: { label: string; value: {} }) => {
         const key = hash(option.value);
         return (
           <option key={key} value={key}>
