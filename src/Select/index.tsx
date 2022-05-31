@@ -1,6 +1,6 @@
 import { ChangeEvent, ElementType, ForwardedRef, forwardRef } from "react";
 import { Box, BoxProps } from "../Box";
-import { hash } from "../utils";
+import { hash } from "./hash";
 
 export type SelectProps<C extends ElementType> = BoxProps<C> & {
   value?: any;
