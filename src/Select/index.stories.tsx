@@ -84,7 +84,7 @@ export const WithOnChange = () => (
         value: 2,
       },
     ]}
-    onChange={(value) => {
+    onChange={(value: number) => {
       console.log(value);
     }}
   />
