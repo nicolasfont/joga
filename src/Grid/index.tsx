@@ -16,7 +16,6 @@ export const Grid = <C extends ElementType>({
   ...props
 }: GridProps<C>) => (
   <Box
-    {...props}
     classNames={[
       css`
         display: grid;
@@ -26,5 +25,6 @@ export const Grid = <C extends ElementType>({
       `,
       className,
     ]}
+    {...props}
   />
 );

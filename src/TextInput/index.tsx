@@ -12,11 +12,11 @@ export const TextInput = <C extends ElementType>({
   ...props
 }: TextInputProps<C>) => (
   <Box
-    {...props}
     as="input"
     type="text"
     onChange={(e: ChangeEvent<HTMLInputElement>) => {
       onChange(e.target.value);
     }}
+    {...props}
   />
 );

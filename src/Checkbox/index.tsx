@@ -12,11 +12,11 @@ export const Checkbox = <C extends ElementType>({
   ...props
 }: CheckboxProps<C>) => (
   <Box
-    {...props}
     as="input"
     type="checkbox"
     onChange={(e: ChangeEvent<HTMLInputElement>) => {
       onChange(e.target.checked);
     }}
+    {...props}
   />
 );

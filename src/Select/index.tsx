@@ -18,12 +18,12 @@ export const Select = <C extends ElementType>({
   ...props
 }: SelectProps<C>) => (
   <Box
-    {...props}
     as="select"
     onChange={(e: ChangeEvent<HTMLSelectElement>) => {
       onChange(options[e.target.selectedIndex + (placeholder ? -1 : 0)]?.value);
     }}
     value={value === undefined ? undefined : hash(value)}
+    {...props}
   >
     {placeholder && <option value="">{placeholder}</option>}
     {options.map((option: { label: string; value: any }) => {

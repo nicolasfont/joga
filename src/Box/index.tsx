@@ -39,7 +39,6 @@ export const Box = <C extends ElementType = "div">({
   const Component = as || "div";
   return (
     <Component
-      {...props}
       className={cx(
         css`
           display: flex;
@@ -55,6 +54,7 @@ export const Box = <C extends ElementType = "div">({
         ...classNames,
         className
       )}
+      {...props}
     />
   );
 };

@@ -13,7 +13,6 @@ export const Button = <C extends ElementType>({
   ...props
 }: ButtonProps<C>) => (
   <Box
-    {...props}
     as="button"
     type="button"
     padding={8}
@@ -28,6 +27,7 @@ export const Button = <C extends ElementType>({
       `,
       className,
     ]}
+    {...props}
   >
     <Heading>{children}</Heading>
   </Box>

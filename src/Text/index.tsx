@@ -21,7 +21,6 @@ export const Text = <C extends ElementType>({
   ...props
 }: TextProps<C>) => (
   <Box
-    {...props}
     as="span"
     classNames={[
       css`
@@ -35,5 +34,6 @@ export const Text = <C extends ElementType>({
       `,
       className,
     ]}
+    {...props}
   />
 );
