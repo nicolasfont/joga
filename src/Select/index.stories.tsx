@@ -1,4 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
+import { useState } from "react";
 import { Select } from "../Select";
 
 export default {
@@ -89,3 +90,25 @@ export const WithOnChange = () => (
     }}
   />
 );
+
+
+
+export const WithHooks = () => {
+  const [value, setValue] = useState();
+
+  return <Select
+    placeholder="Select something"
+    options={[
+      {
+        label: "Option 1",
+        value: 1,
+      },
+      {
+        label: "Option 2",
+        value: 2,
+      },
+    ]}
+    value={value}
+    onChange={setValue}
+  />;
+};
