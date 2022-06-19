@@ -9,6 +9,8 @@ export * from "./Select";
 export * from "./Stack";
 export * from "./Text";
 export * from "./TextInput";
+export * from "./ThemeDark";
+export * from "./ThemeLight";
 
 import { css, cx, injectGlobal, keyframes } from "@emotion/css";
 export { css, cx, injectGlobal, keyframes };
