@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { Box, BoxProps } from "../Box";
+import { Box, BoxProps } from "../../components";
 
 export type ThemeLightProps<C extends ElementType> = BoxProps<C>;
 

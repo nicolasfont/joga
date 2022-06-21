@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Box } from "../Box";
+import { Box } from ".";
 
 describe("Box", () => {
   it("should render with default props", () => {
