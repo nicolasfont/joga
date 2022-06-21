@@ -1,5 +1,18 @@
-import { css, cx } from "@emotion/css";
+import { css, cx, injectGlobal } from "@emotion/css";
 import { ElementType, ReactNode } from "react";
+
+injectGlobal`
+  :root {
+    --joga-primary: #333;
+    --joga-foreground: #fff;
+
+    --joga-xs: 2px;
+    --joga-s: 4px;
+    --joga-m: 8px;
+    --joga-l: 16px;
+    --joga-xl: 32px;
+  }
+`;
 
 export type BoxProps<C extends ElementType> =
   React.ComponentPropsWithoutRef<C> & {
@@ -10,6 +23,7 @@ export type BoxProps<C extends ElementType> =
     border?: number;
     children?: ReactNode;
     className?: string;
+    color?: string;
     direction?: "column" | "row";
     flex?: string;
     gap?: number;
@@ -30,6 +44,7 @@ export const Box = <C extends ElementType = "div">({
   backgroundColor,
   border,
   className,
+  color,
   direction,
   flex,
   gap,
@@ -45,7 +60,8 @@ export const Box = <C extends ElementType = "div">({
           display: flex;
           ${align && `align-items: ${align};`}
           ${area && `grid-area: ${area};`}
-          ${backgroundColor && `background-color: ${backgroundColor};`}
+          ${color && `color: var(--joga-${color}, ${color});`}
+          ${backgroundColor && `background-color: var(--joga-${backgroundColor}, ${backgroundColor});`}
           ${border && `border: ${border}px solid;`}
           ${direction && `flex-direction: ${direction};`}
           ${flex && `flex: ${flex};`}

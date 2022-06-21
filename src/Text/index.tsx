@@ -24,9 +24,9 @@ export const Text = <C extends ElementType>({
 }: TextProps<C>) => (
   <Box
     as="span"
+    color={color}
     className={cx(
       css`
-        color: ${color};
         display: inline-flex;
         font-family: ${family};
         font-size: ${size}rem;
