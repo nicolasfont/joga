@@ -1,7 +1,16 @@
 import { ElementType } from "react";
-import { Box, BoxProps } from "../../components";
+import { ThemeBase, ThemeBaseProps } from "../ThemeBase";
 
-export type ThemeLightProps<C extends ElementType> = BoxProps<C>;
+export type ThemeLightProps<C extends ElementType> = ThemeBaseProps<C>;
 
-export const ThemeLight = <C extends ElementType>({ ...props }: ThemeLightProps<C>) =>
-  <Box {...props} />;
+export const ThemeLight = <C extends ElementType>({
+  foregroundColor = "#fff",
+  primaryColor = "#333",
+  ...props
+}: ThemeLightProps<C>) => (
+  <ThemeBase
+    primaryColor={primaryColor}
+    foregroundColor={foregroundColor}
+    {...props}
+  />
+);

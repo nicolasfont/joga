@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Box } from ".";
+import { Box } from "../Box";
 import { Text } from "../Text";
 
 export default {

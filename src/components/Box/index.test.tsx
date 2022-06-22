@@ -152,7 +152,7 @@ describe("Box", () => {
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
     expect(screen.getByText("Lorem ipsum")).toHaveStyle(
-      "background-color: var(--joga-#333, #333)"
+      "background-color: #333"
     );
   });
 

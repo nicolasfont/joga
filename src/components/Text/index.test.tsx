@@ -55,6 +55,6 @@ describe("Text", () => {
     render(<Text color="#fff">Lorem ipsum</Text>);
 
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle("color: var(--joga-#fff, #fff)");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("color: #fff");
   });
 });

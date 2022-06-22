@@ -1,15 +1,16 @@
-import { css } from "@emotion/css";
 import { ElementType } from "react";
-import { ThemeLight, ThemeLightProps } from "../ThemeLight";
+import { ThemeBase, ThemeBaseProps } from "../ThemeBase";
 
-export type ThemeDarkProps<C extends ElementType> = ThemeLightProps<C>;
+export type ThemeDarkProps<C extends ElementType> = ThemeBaseProps<C>;
 
-export const ThemeDark = <C extends ElementType>({ ...props }: ThemeDarkProps<C>) =>
-  <ThemeLight className={css`
-    & {
-      --joga-primary: #fff;
-      --joga-foreground: #333;
-      --joga-primary-button-color: var(--joga-foreground);
-      --joga-primary-button-background-color: var(--joga-primary);
-    }
-  `} {...props} />;
+export const ThemeDark = <C extends ElementType>({
+  foregroundColor = "#333",
+  primaryColor = "#fff",
+  ...props
+}: ThemeDarkProps<C>) => (
+  <ThemeBase
+    primaryColor={primaryColor}
+    foregroundColor={foregroundColor}
+    {...props}
+  />
+);

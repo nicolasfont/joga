@@ -1,8 +1,8 @@
 import { ComponentMeta } from "@storybook/react";
 import { useCallback, useState } from "react";
 import { Button } from "../Button";
-import { ThemeDark, ThemeLight } from "../../themes";
 import { Text } from "../Text";
+import { ThemeDark, ThemeLight } from "../../themes";
 
 export default {
   title: "Button",
