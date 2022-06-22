@@ -53,6 +53,13 @@ describe("Box", () => {
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("align-items: end");
   });
 
+  it("should render with align stretch", () => {
+    render(<Box align="stretch">Lorem ipsum</Box>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("align-items: stretch");
+  });
+
   it("should render with justify center", () => {
     render(<Box justify="center">Lorem ipsum</Box>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();

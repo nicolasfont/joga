@@ -14,28 +14,27 @@ injectGlobal`
   }
 `;
 
-export type BoxProps<C extends ElementType> =
-  React.ComponentPropsWithoutRef<C> & {
-    align?: "center" | "start" | "end";
-    area?: string;
-    as?: C;
-    backgroundColor?: string;
-    border?: number;
-    children?: ReactNode;
-    className?: string;
-    color?: string;
-    direction?: "column" | "row";
-    flex?: string;
-    gap?: number;
-    justify?:
-      | "center"
-      | "start"
-      | "end"
-      | "space-around"
-      | "space-between"
-      | "space-evenly";
-    padding?: number;
-  };
+export type BoxProps<C extends ElementType> = React.ComponentPropsWithoutRef<C> & {
+  align?: "center" | "start" | "end" | "stretch";
+  area?: string;
+  as?: C;
+  backgroundColor?: string;
+  border?: number;
+  children?: ReactNode;
+  className?: string;
+  color?: string;
+  direction?: "column" | "row";
+  flex?: string;
+  gap?: number;
+  justify?:
+    | "center"
+    | "start"
+    | "end"
+    | "space-around"
+    | "space-between"
+    | "space-evenly";
+  padding?: number;
+};
 
 export const Box = <C extends ElementType = "div">({
   align,
