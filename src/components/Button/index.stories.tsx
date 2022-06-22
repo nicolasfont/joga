@@ -1,7 +1,8 @@
 import { ComponentMeta } from "@storybook/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button } from "../Button";
 import { ThemeDark, ThemeLight } from "../../themes";
+import { Text } from "../Text";
 
 export default {
   title: "Button",
@@ -10,31 +11,50 @@ export default {
 
 export const Default = () => <Button>Click Me</Button>;
 
-export const WithLightTheme = () =>
+export const WithLightTheme = () => (
   <ThemeLight>
     <Button>Click Me</Button>
-  </ThemeLight>;
+  </ThemeLight>
+);
 
-export const WithDarkTheme = () =>
+export const WithDarkTheme = () => (
   <ThemeDark>
     <Button>Click Me</Button>
-  </ThemeDark>;
+  </ThemeDark>
+);
 
-export const SwitchingThemes = () => {
+export const TogglingThemes = () => {
   const [theme, setTheme] = useState("light");
 
   const Theme = theme === "light" ? ThemeLight : ThemeDark;
 
+  const toggleTheme = useCallback(() => {
+    setTheme(theme === "light" ? "dark" : "light");
+  }, [theme, setTheme]);
+
   return (
     <Theme>
-      <Button onClick={() => {
-        setTheme(theme === "light" ? "dark" : "light");
-      }}>Click Me</Button>
+      <Button onClick={toggleTheme}>Toggle</Button>
     </Theme>
   );
 };
 
-export const WithCustomColors = () =>
+export const WithCustomColors = () => (
   <Button color="yellow" backgroundColor="red">
     Fancy
-  </Button>;
+  </Button>
+);
+
+export const WithGap = () => (
+  <Button gap={8}>
+    <Text backgroundColor="red" padding={8}>
+      Red
+    </Text>
+    <Text backgroundColor="green" padding={8}>
+      Green
+    </Text>
+    <Text backgroundColor="blue" padding={8}>
+      Blue
+    </Text>
+  </Button>
+);
