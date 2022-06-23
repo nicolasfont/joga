@@ -11,15 +11,22 @@ npm i joga
 ## Usage
 
 ```jsx
-import { Button, Heading, Row, Stack, Text } from "joga";
+import {
+  Heading,
+  OutlineButton,
+  Paragraph,
+  PrimaryButton,
+  Row,
+  Stack,
+} from "joga";
 
 export const Example = () => (
   <Stack gap="m">
     <Heading>An Example</Heading>
-    <Text>Lorem ipsum</Text>
+    <Paragraph>Lorem ipsum</Paragraph>
     <Row gap="m" justify="end">
-      <Button>Cancel</Button>
-      <Button>Send</Button>
+      <OutlineButton>Cancel</OutlineButton>
+      <PrimaryButton>Send</PrimaryButton>
     </Row>
   </Stack>
 );
