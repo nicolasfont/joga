@@ -1,6 +1,6 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
-import { Box, BoxProps } from "../../components";
+import { Box, BoxProps } from "../..";
 
 export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
   defaultColors?: string[];

@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { ThemeBase, ThemeBaseProps } from "../ThemeBase";
+import { ThemeBase, ThemeBaseProps } from "../..";
 
 export type ThemeDarkProps<C extends ElementType> = ThemeBaseProps<C>;
 
