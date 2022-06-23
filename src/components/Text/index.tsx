@@ -16,7 +16,6 @@ export type TextProps<C extends ElementType> = BoxProps<C> & {
 
 export const Text = <C extends ElementType>({
   className,
-  color = "#333",
   family = '"Helvetica Neue", Helvetica, Arial, sans-serif',
   lineHeight = "1",
   size = 1,
@@ -25,7 +24,6 @@ export const Text = <C extends ElementType>({
 }: TextProps<C>) => (
   <Box
     as="span"
-    color={color}
     className={cx(
       css`
         display: inline-flex;

@@ -19,7 +19,7 @@ export const WithLightTheme = () => (
 );
 
 export const WithDarkTheme = () => (
-  <ThemeDark>
+  <ThemeDark padding="l">
     <Button>Click Me</Button>
   </ThemeDark>
 );
@@ -34,7 +34,7 @@ export const TogglingThemes = () => {
   }, [theme, setTheme]);
 
   return (
-    <Theme>
+    <Theme padding="l">
       <Button onClick={toggleTheme}>Toggle</Button>
     </Theme>
   );
