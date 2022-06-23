@@ -19,6 +19,7 @@ export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
   };
   lineHeight?: string;
   defaultBorder?: string;
+  defaultBorderRadius?: string;
 };
 
 export const ThemeBase = <C extends ElementType>({
@@ -34,6 +35,7 @@ export const ThemeBase = <C extends ElementType>({
   },
   lineHeight = "1.6",
   defaultBorder = "1px solid",
+  defaultBorderRadius = "4px",
   ...props
 }: ThemeBaseProps<C>) => (
   <Box
@@ -53,6 +55,7 @@ export const ThemeBase = <C extends ElementType>({
           --joga-primary-color-2: ${primaryColors[2]};
           --joga-line-height: ${lineHeight};
           --joga-default-border: ${defaultBorder};
+          --joga-default-border-radius: ${defaultBorderRadius};
         }
       `,
       className

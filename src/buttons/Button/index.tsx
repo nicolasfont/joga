@@ -10,6 +10,7 @@ export const Button = <C extends ElementType>({
   padding = "m",
   weight = 500,
   border = "0",
+  borderRadius = "default-border-radius",
   color = "primary-color-1",
   backgroundColor = "primary-color-0",
   className,
@@ -20,13 +21,13 @@ export const Button = <C extends ElementType>({
     as="button"
     type="button"
     border={border}
+    borderRadius={borderRadius}
     padding={padding}
     weight={weight}
     color={color}
     backgroundColor={backgroundColor}
     className={cx(
       css`
-        border-radius: 4px;
         cursor: pointer;
       `,
       className
