@@ -34,7 +34,8 @@ export type BoxProps<C extends ElementType> =
       | "end"
       | "space-around"
       | "space-between"
-      | "space-evenly";
+      | "space-evenly"
+      | "stretch";
     padding?: number;
   };
 

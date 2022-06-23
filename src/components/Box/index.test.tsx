@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Box } from ".";
+import { render, screen } from "@testing-library/react";
+import { Box } from "../Box";
 
 describe("Box", () => {
   it("should render with default props", () => {
@@ -109,6 +109,15 @@ describe("Box", () => {
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
     expect(screen.getByText("Lorem ipsum")).toHaveStyle(
       "justify-content: space-evenly"
+    );
+  });
+
+  it("should render with justify stretch", () => {
+    render(<Box justify="stretch">Lorem ipsum</Box>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
+      "justify-content: stretch"
     );
   });
 
