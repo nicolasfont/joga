@@ -17,6 +17,7 @@ export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
     l: string;
     xl: string;
   };
+  lineHeight?: string;
 };
 
 export const ThemeBase = <C extends ElementType>({
@@ -30,6 +31,7 @@ export const ThemeBase = <C extends ElementType>({
     l: "16px",
     xl: "32px",
   },
+  lineHeight = "1.6",
   ...props
 }: ThemeBaseProps<C>) => (
   <Box
@@ -49,6 +51,8 @@ export const ThemeBase = <C extends ElementType>({
           --joga-primary-color-0: ${primaryColors[0]};
           --joga-primary-color-1: ${primaryColors[1]};
           --joga-primary-color-2: ${primaryColors[2]};
+
+          --joga-line-height: ${lineHeight};
         }
       `,
       className

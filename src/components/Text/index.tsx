@@ -1,5 +1,6 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
+import { jogaVar } from "../../utils";
 import { Box, BoxProps } from "../Box";
 
 export type TextProps<C extends ElementType> = BoxProps<C> & {
@@ -31,7 +32,7 @@ export const Text = <C extends ElementType>({
         font-family: ${family};
         font-size: ${size}rem;
         font-weight: ${weight};
-        line-height: ${lineHeight};
+        line-height: ${jogaVar(lineHeight)};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       `,
