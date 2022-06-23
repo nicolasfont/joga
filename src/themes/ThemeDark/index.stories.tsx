@@ -1,5 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
-import { ExampleForm, ThemeDark } from "../..";
+import { ThemeDark } from "../..";
+import { ExampleForm } from "../../examples/ExampleForm/index.stories";
 
 export default {
   title: "Themes/ThemeDark",

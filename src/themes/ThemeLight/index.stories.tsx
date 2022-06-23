@@ -1,5 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
-import { ExampleForm, ThemeLight } from "../..";
+import { ThemeLight } from "../..";
+import { ExampleForm } from "../../examples/ExampleForm/index.stories";
 
 export default {
   title: "Themes/ThemeLight",
