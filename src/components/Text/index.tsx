@@ -5,7 +5,7 @@ import { Box, BoxProps } from "../Box";
 export type TextProps<C extends ElementType> = BoxProps<C> & {
   color?: string;
   family?: string;
-  lineHeight?: number;
+  lineHeight?: string;
   /**
    * Size in rems
    */
@@ -17,7 +17,7 @@ export const Text = <C extends ElementType>({
   className,
   color = "#333",
   family = '"Helvetica Neue", Helvetica, Arial, sans-serif',
-  lineHeight = 1.6,
+  lineHeight = "1",
   size = 1,
   weight = 400,
   ...props

@@ -13,7 +13,7 @@ describe("Text", () => {
     );
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("font-size: 1rem");
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("font-weight: 400");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle("line-height: 1.6");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("line-height: 1");
   });
 
   it("should render with className", () => {
@@ -31,7 +31,7 @@ describe("Text", () => {
   });
 
   it("should render with lineHeight", () => {
-    render(<Text lineHeight={2}>Lorem ipsum</Text>);
+    render(<Text lineHeight="2">Lorem ipsum</Text>);
 
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("line-height: 2");
