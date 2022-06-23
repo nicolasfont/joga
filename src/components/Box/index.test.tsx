@@ -129,10 +129,21 @@ describe("Box", () => {
   });
 
   it("should render with gap", () => {
-    render(<Box gap={8}>Lorem ipsum</Box>);
+    render(<Box gap="m">Lorem ipsum</Box>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle("gap: 8px");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
+      "gap: var(--joga-m, m)"
+    );
+  });
+
+  it("should render with gap in pixels", () => {
+    render(<Box gap="8px">Lorem ipsum</Box>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
+      "gap: var(--joga-8px, 8px)"
+    );
   });
 
   it("should render with padding", () => {

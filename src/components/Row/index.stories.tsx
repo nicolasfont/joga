@@ -1,6 +1,7 @@
 import { ComponentMeta } from "@storybook/react";
 import { Row } from "../Row";
 import { Button } from "../Button";
+import { Text } from "../Text";
 
 export default {
   title: "Row",
@@ -8,7 +9,15 @@ export default {
 } as ComponentMeta<typeof Row>;
 
 export const Default = () => (
-  <Row gap={8}>
+  <Row>
+    <Text>One</Text>
+    <Text>Two</Text>
+    <Text>Three</Text>
+  </Row>
+);
+
+export const WithGap = () => (
+  <Row gap="m">
     <Button>One</Button>
     <Button>Two</Button>
     <Button>Three</Button>
@@ -16,9 +25,9 @@ export const Default = () => (
 );
 
 export const Centered = () => (
-  <Row gap={8} justify="center">
+  <Row gap="m" justify="center" align="center">
     <Button>One</Button>
-    <Button>Two</Button>
+    <Text>Two</Text>
     <Button>Three</Button>
   </Row>
 );

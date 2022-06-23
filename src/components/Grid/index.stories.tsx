@@ -9,7 +9,7 @@ export default {
 } as ComponentMeta<typeof Grid>;
 
 export const Default = () => (
-  <Grid gap={8}>
+  <Grid gap="m">
     <Button>Lorem</Button>
     <Button>ipsum</Button>
     <Button>dolor</Button>
@@ -17,7 +17,7 @@ export const Default = () => (
 );
 
 export const Columns = () => (
-  <Grid columns="auto 1fr auto" gap={8}>
+  <Grid columns="auto 1fr auto" gap="m">
     <Button>Lorem</Button>
     <Button>ipsum</Button>
     <Button>dolor</Button>
@@ -25,7 +25,7 @@ export const Columns = () => (
 );
 
 export const Rows = () => (
-  <Grid rows="auto 1fr auto" gap={8}>
+  <Grid rows="auto 1fr auto" gap="m">
     <Button>Lorem</Button>
     <Button>ipsum</Button>
     <Button>dolor</Button>
@@ -40,7 +40,7 @@ export const Areas = () => (
       "footer footer"
     `}
     columns="auto 1fr"
-    gap={8}
+    gap="m"
   >
     <Stack area="header">
       <Button>Header</Button>

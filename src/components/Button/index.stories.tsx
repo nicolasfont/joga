@@ -47,7 +47,7 @@ export const WithCustomColors = () => (
 );
 
 export const WithGap = () => (
-  <Button gap={8}>
+  <Button gap="m">
     <Text backgroundColor="red" padding="m">
       Red
     </Text>
@@ -61,7 +61,7 @@ export const WithGap = () => (
 );
 
 export const WithPaddings = () => (
-  <Stack gap={8} align="start">
+  <Stack gap="m" align="start">
     <Button padding="xs">Extra Small Padding</Button>
     <Button padding="s">Small Padding</Button>
     <Button padding="m">Medium Padding</Button>

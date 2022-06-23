@@ -14,10 +14,10 @@ npm i joga
 import { Button, Heading, Row, Stack, Text } from "joga";
 
 export const Example = () => (
-  <Stack gap={8}>
+  <Stack gap="m">
     <Heading>An Example</Heading>
     <Text>Lorem ipsum</Text>
-    <Row gap={8} justify="end">
+    <Row gap="m" justify="end">
       <Button>Cancel</Button>
       <Button>Send</Button>
     </Row>
