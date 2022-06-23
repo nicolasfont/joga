@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { OutlineButton } from "../OutlineButton";
+import { OutlineButton } from "../..";
 
 export default {
   title: "Buttons/OutlineButton",

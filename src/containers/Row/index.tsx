@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { Box, BoxProps } from "../Box";
+import { Box, BoxProps } from "../..";
 
 export type RowProps<C extends ElementType> = BoxProps<C>;
 

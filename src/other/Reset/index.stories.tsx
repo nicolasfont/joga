@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Reset } from "../Reset";
+import { Reset } from "../..";
 
 export default {
   title: "Other/Reset",

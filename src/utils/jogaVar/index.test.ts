@@ -1,4 +1,4 @@
-import { jogaVar } from "../jogaVar";
+import { jogaVar } from "../..";
 
 describe("jogaVar", () => {
   it("should return undefined when value is undefined", () => {

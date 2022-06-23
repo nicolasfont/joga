@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Heading } from "../Heading";
+import { Heading } from "../..";
 
 export default {
   title: "Text/Heading",

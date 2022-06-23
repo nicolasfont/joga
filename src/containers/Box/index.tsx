@@ -1,6 +1,6 @@
 import { css, cx, injectGlobal } from "@emotion/css";
 import { ElementType, ReactNode } from "react";
-import { jogaVar } from "../../utils";
+import { jogaVar } from "../..";
 
 injectGlobal`
   :root {

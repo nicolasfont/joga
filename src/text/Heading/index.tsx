@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { Text, TextProps } from "../Text";
+import { Text, TextProps } from "../..";
 
 export type HeadingProps<C extends ElementType> = TextProps<C>;
 

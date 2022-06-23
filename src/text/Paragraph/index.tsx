@@ -1,6 +1,6 @@
 import { injectGlobal } from "@emotion/css";
 import { ElementType } from "react";
-import { Text, TextProps } from "../Text";
+import { Text, TextProps } from "../..";
 
 injectGlobal`
   :root {

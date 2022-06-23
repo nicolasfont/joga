@@ -1,9 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
 import { useCallback, useState } from "react";
-import { Button } from "../Button";
-import { Text } from "../..";
-import { ThemeDark, ThemeLight } from "../../themes";
-import { Stack } from "../../containers/Stack";
+import { Button, Stack, Text, ThemeDark, ThemeLight } from "../..";
 
 export default {
   title: "Buttons/Button",
