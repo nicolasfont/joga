@@ -15,29 +15,28 @@ injectGlobal`
   }
 `;
 
-export type BoxProps<C extends ElementType> =
-  React.ComponentPropsWithoutRef<C> & {
-    align?: "center" | "start" | "end" | "stretch";
-    area?: string;
-    as?: C;
-    backgroundColor?: string;
-    border?: number;
-    children?: ReactNode;
-    className?: string;
-    color?: string;
-    direction?: "column" | "row";
-    flex?: string;
-    gap?: number;
-    justify?:
-      | "center"
-      | "start"
-      | "end"
-      | "space-around"
-      | "space-between"
-      | "space-evenly"
-      | "stretch";
-    padding?: number;
-  };
+export type BoxProps<C extends ElementType> = React.ComponentPropsWithoutRef<C> & {
+  align?: "center" | "start" | "end" | "stretch";
+  area?: string;
+  as?: C;
+  backgroundColor?: string;
+  border?: string;
+  children?: ReactNode;
+  className?: string;
+  color?: string;
+  direction?: "column" | "row";
+  flex?: string;
+  gap?: number;
+  justify?:
+    | "center"
+    | "start"
+    | "end"
+    | "space-around"
+    | "space-between"
+    | "space-evenly"
+    | "stretch";
+  padding?: number;
+};
 
 export const Box = <C extends ElementType = "div">({
   align,
@@ -64,7 +63,7 @@ export const Box = <C extends ElementType = "div">({
           ${area && `grid-area: ${area};`}
           ${color && `color: ${jogaVar(color)};`}
           ${backgroundColor && `background-color: ${jogaVar(backgroundColor)};`}
-          ${border && `border: ${border}px solid;`}
+          ${border && `border: ${jogaVar(border)};`}
           ${direction && `flex-direction: ${direction};`}
           ${flex && `flex: ${flex};`}
           ${gap && `gap: ${gap}px;`}

@@ -6,6 +6,7 @@ injectGlobal`
   :root {
     --joga-primary-button-color: var(--joga-foreground);
     --joga-primary-button-background-color: var(--joga-primary);
+    --joga-primary-button-border: 0;
   }
 `;
 
@@ -16,6 +17,7 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 export const Button = <C extends ElementType>({
   padding = 8,
   weight = 500,
+  border = "primary-button-border",
   color = "primary-button-color",
   backgroundColor = "primary-button-background-color",
   className,
@@ -25,13 +27,13 @@ export const Button = <C extends ElementType>({
   <Text
     as="button"
     type="button"
+    border={border}
     padding={padding}
     weight={weight}
     color={color}
     backgroundColor={backgroundColor}
     className={cx(
       css`
-        border: 0;
         border-radius: 4px;
         cursor: pointer;
       `,
