@@ -3,6 +3,7 @@ import { useCallback, useState } from "react";
 import { Button } from "../Button";
 import { Text } from "../Text";
 import { ThemeDark, ThemeLight } from "../../themes";
+import { Stack } from "../Stack";
 
 export default {
   title: "Button",
@@ -47,14 +48,24 @@ export const WithCustomColors = () => (
 
 export const WithGap = () => (
   <Button gap={8}>
-    <Text backgroundColor="red" padding={8}>
+    <Text backgroundColor="red" padding="m">
       Red
     </Text>
-    <Text backgroundColor="green" padding={8}>
+    <Text backgroundColor="green" padding="m">
       Green
     </Text>
-    <Text backgroundColor="blue" padding={8}>
+    <Text backgroundColor="blue" padding="m">
       Blue
     </Text>
   </Button>
+);
+
+export const WithPaddings = () => (
+  <Stack gap={8} align="start">
+    <Button padding="xs">Extra Small Padding</Button>
+    <Button padding="s">Small Padding</Button>
+    <Button padding="m">Medium Padding</Button>
+    <Button padding="l">Large Padding</Button>
+    <Button padding="xl">Extra Large Padding</Button>
+  </Stack>
 );

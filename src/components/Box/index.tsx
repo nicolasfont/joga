@@ -19,28 +19,29 @@ injectGlobal`
   }
 `;
 
-export type BoxProps<C extends ElementType> = React.ComponentPropsWithoutRef<C> & {
-  align?: "center" | "start" | "end" | "stretch";
-  area?: string;
-  as?: C;
-  backgroundColor?: string;
-  border?: string;
-  children?: ReactNode;
-  className?: string;
-  color?: string;
-  direction?: "column" | "row";
-  flex?: string;
-  gap?: number;
-  justify?:
-    | "center"
-    | "start"
-    | "end"
-    | "space-around"
-    | "space-between"
-    | "space-evenly"
-    | "stretch";
-  padding?: number;
-};
+export type BoxProps<C extends ElementType> =
+  React.ComponentPropsWithoutRef<C> & {
+    align?: "center" | "start" | "end" | "stretch";
+    area?: string;
+    as?: C;
+    backgroundColor?: string;
+    border?: string;
+    children?: ReactNode;
+    className?: string;
+    color?: string;
+    direction?: "column" | "row";
+    flex?: string;
+    gap?: number;
+    justify?:
+      | "center"
+      | "start"
+      | "end"
+      | "space-around"
+      | "space-between"
+      | "space-evenly"
+      | "stretch";
+    padding?: string;
+  };
 
 export const Box = <C extends ElementType = "div">({
   align,
@@ -72,7 +73,7 @@ export const Box = <C extends ElementType = "div">({
           ${flex && `flex: ${flex};`}
           ${gap && `gap: ${gap}px;`}
           ${justify && `justify-content: ${justify};`}
-          ${padding && `padding: ${padding}px;`}
+          ${padding && `padding: ${jogaVar(padding)};`}
         `,
         className
       )}

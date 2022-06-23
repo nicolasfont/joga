@@ -136,10 +136,21 @@ describe("Box", () => {
   });
 
   it("should render with padding", () => {
-    render(<Box padding={8}>Lorem ipsum</Box>);
+    render(<Box padding="m">Lorem ipsum</Box>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle("padding: 8px");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
+      "padding: var(--joga-m, m)"
+    );
+  });
+
+  it("should render with padding in pixels", () => {
+    render(<Box padding="12px">Lorem ipsum</Box>);
+    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
+      "padding: var(--joga-12px, 12px)"
+    );
   });
 
   it("should render with border", () => {

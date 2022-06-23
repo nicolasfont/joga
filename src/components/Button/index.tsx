@@ -7,7 +7,7 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 };
 
 export const Button = <C extends ElementType>({
-  padding = 8,
+  padding = "m",
   weight = 500,
   border = "0",
   color = "primary-color-1",
