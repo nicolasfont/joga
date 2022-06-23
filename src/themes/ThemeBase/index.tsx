@@ -39,6 +39,8 @@ export const ThemeBase = <C extends ElementType>({
   ...props
 }: ThemeBaseProps<C>) => (
   <Box
+    backgroundColor="default-color-0"
+    color="default-color-1"
     className={cx(
       css`
         & {
