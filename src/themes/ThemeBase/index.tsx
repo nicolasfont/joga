@@ -18,6 +18,7 @@ export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
     xl: string;
   };
   lineHeight?: string;
+  defaultBorder?: string;
 };
 
 export const ThemeBase = <C extends ElementType>({
@@ -32,6 +33,7 @@ export const ThemeBase = <C extends ElementType>({
     xl: "32px",
   },
   lineHeight = "1.6",
+  defaultBorder = "1px solid",
   ...props
 }: ThemeBaseProps<C>) => (
   <Box
@@ -43,16 +45,14 @@ export const ThemeBase = <C extends ElementType>({
           --joga-m: ${spacings.m};
           --joga-l: ${spacings.l};
           --joga-xl: ${spacings.xl};
-
           --joga-default-color-0: ${defaultColors[0]};
           --joga-default-color-1: ${defaultColors[1]};
           --joga-default-color-2: ${defaultColors[2]};
-
           --joga-primary-color-0: ${primaryColors[0]};
           --joga-primary-color-1: ${primaryColors[1]};
           --joga-primary-color-2: ${primaryColors[2]};
-
           --joga-line-height: ${lineHeight};
+          --joga-default-border: ${defaultBorder};
         }
       `,
       className

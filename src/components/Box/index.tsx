@@ -16,6 +16,8 @@ injectGlobal`
     --joga-primary-color-0: #333;
     --joga-primary-color-1: #fff;
     --joga-primary-color-2: #666;
+
+    --joga-default-border: 1px solid;
   }
 `;
 
