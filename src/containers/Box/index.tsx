@@ -50,7 +50,7 @@ export const Box = <C extends ElementType = "div">({
   align,
   area,
   as,
-  backgroundColor,
+  backgroundColor = "transparent",
   border,
   borderRadius,
   className,

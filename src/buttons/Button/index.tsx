@@ -11,8 +11,7 @@ export const Button = <C extends ElementType>({
   weight = 500,
   border = "0",
   borderRadius = "default-border-radius",
-  color = "primary-color-1",
-  backgroundColor = "primary-color-0",
+  color = "default-color-1",
   className,
   children,
   ...props
@@ -25,7 +24,6 @@ export const Button = <C extends ElementType>({
     padding={padding}
     weight={weight}
     color={color}
-    backgroundColor={backgroundColor}
     className={cx(
       css`
         cursor: pointer;

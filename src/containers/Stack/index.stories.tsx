@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Button, Text, Stack } from "../..";
+import { PrimaryButton, Text, Stack } from "../..";
 
 export default {
   title: "Containers/Stack",
@@ -16,24 +16,24 @@ export const Default = () => (
 
 export const WithGap = () => (
   <Stack gap="m">
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+    <PrimaryButton>One</PrimaryButton>
+    <PrimaryButton>Two</PrimaryButton>
+    <PrimaryButton>Three</PrimaryButton>
   </Stack>
 );
 
 export const WithLargeGap = () => (
   <Stack gap="l">
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+    <PrimaryButton>One</PrimaryButton>
+    <PrimaryButton>Two</PrimaryButton>
+    <PrimaryButton>Three</PrimaryButton>
   </Stack>
 );
 
 export const Centered = () => (
   <Stack gap="m" align="center">
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+    <PrimaryButton>One</PrimaryButton>
+    <PrimaryButton>Two</PrimaryButton>
+    <PrimaryButton>Three</PrimaryButton>
   </Stack>
 );

@@ -1,12 +1,17 @@
 import { ElementType } from "react";
-import { Button, Heading, OutlineButton, Paragraph, Row, Stack } from "../..";
-import { StackProps } from "../../containers";
+import {
+  Heading,
+  OutlineButton,
+  Paragraph,
+  PrimaryButton,
+  Row,
+  Stack,
+  StackProps,
+} from "../..";
 
 export type ExampleForm<C extends ElementType> = StackProps<C>;
 
-export const ExampleForm = <C extends ElementType>({
-  ...props
-}: StackProps<C>) => (
+export const ExampleForm = <C extends ElementType>({ ...props }: StackProps<C>) => (
   <Stack gap="l" padding="l" {...props}>
     <Heading size={1.2}>Please Read Carefully</Heading>
     <Paragraph>
@@ -27,7 +32,7 @@ export const ExampleForm = <C extends ElementType>({
     </Paragraph>
     <Row gap="m" justify="end">
       <OutlineButton>Cancel</OutlineButton>
-      <Button>Submit</Button>
+      <PrimaryButton>Submit</PrimaryButton>
     </Row>
   </Stack>
 );

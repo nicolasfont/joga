@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Button, Grid, Stack } from "../..";
+import { PrimaryButton, Grid, Stack } from "../..";
 
 export default {
   title: "Containers/Grid",
@@ -8,25 +8,25 @@ export default {
 
 export const Default = () => (
   <Grid gap="m">
-    <Button>Lorem</Button>
-    <Button>ipsum</Button>
-    <Button>dolor</Button>
+    <PrimaryButton>Lorem</PrimaryButton>
+    <PrimaryButton>ipsum</PrimaryButton>
+    <PrimaryButton>dolor</PrimaryButton>
   </Grid>
 );
 
 export const Columns = () => (
   <Grid columns="auto 1fr auto" gap="m">
-    <Button>Lorem</Button>
-    <Button>ipsum</Button>
-    <Button>dolor</Button>
+    <PrimaryButton>Lorem</PrimaryButton>
+    <PrimaryButton>ipsum</PrimaryButton>
+    <PrimaryButton>dolor</PrimaryButton>
   </Grid>
 );
 
 export const Rows = () => (
   <Grid rows="auto 1fr auto" gap="m">
-    <Button>Lorem</Button>
-    <Button>ipsum</Button>
-    <Button>dolor</Button>
+    <PrimaryButton>Lorem</PrimaryButton>
+    <PrimaryButton>ipsum</PrimaryButton>
+    <PrimaryButton>dolor</PrimaryButton>
   </Grid>
 );
 
@@ -41,16 +41,16 @@ export const Areas = () => (
     gap="m"
   >
     <Stack area="header">
-      <Button>Header</Button>
+      <PrimaryButton>Header</PrimaryButton>
     </Stack>
     <Stack area="side">
-      <Button>Sidebar</Button>
+      <PrimaryButton>Sidebar</PrimaryButton>
     </Stack>
     <Stack area="main">
-      <Button>Main</Button>
+      <PrimaryButton>Main</PrimaryButton>
     </Stack>
     <Stack area="footer">
-      <Button>Footer</Button>
+      <PrimaryButton>Footer</PrimaryButton>
     </Stack>
   </Grid>
 );
