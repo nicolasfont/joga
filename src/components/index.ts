@@ -3,6 +3,7 @@ export * from "./Button";
 export * from "./Checkbox";
 export * from "./Grid";
 export * from "./Heading";
+export * from "./Paragraph";
 export * from "./Reset";
 export * from "./Row";
 export * from "./Select";
