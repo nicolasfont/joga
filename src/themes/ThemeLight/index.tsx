@@ -4,13 +4,13 @@ import { ThemeBase, ThemeBaseProps } from "../ThemeBase";
 export type ThemeLightProps<C extends ElementType> = ThemeBaseProps<C>;
 
 export const ThemeLight = <C extends ElementType>({
-  foregroundColor = "#fff",
-  primaryColor = "#333",
+  defaultColors = ["#fff", "#333", "#666"],
+  primaryColors = ["#333", "#fff", "#666"],
   ...props
 }: ThemeLightProps<C>) => (
   <ThemeBase
-    primaryColor={primaryColor}
-    foregroundColor={foregroundColor}
+    defaultColors={defaultColors}
+    primaryColors={primaryColors}
     {...props}
   />
 );

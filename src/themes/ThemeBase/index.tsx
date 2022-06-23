@@ -1,36 +1,34 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
 import { Box, BoxProps } from "../../components";
-import { jogaVar } from "../../utils";
 
 export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
-  primaryButtonBorder?: string;
-  primaryButtonColor?: string;
-  primaryButtonBackgroundColor?: string;
-  primaryColor?: string;
-  foregroundColor?: string;
+  defaultColors?: string[];
+  alternateColors?: string[];
+  primaryColors?: string[];
+  secondaryColors?: string[];
+  successColors?: string[];
+  errorColors?: string[];
+  warningColors?: string[];
 };
 
 export const ThemeBase = <C extends ElementType>({
   className,
-  foregroundColor = "#fff",
-  primaryButtonBorder = "0",
-  primaryButtonColor = "foreground-color",
-  primaryButtonBackgroundColor = "primary-color",
-  primaryColor = "#333",
+  defaultColors = ["#fff", "#333", "#666"],
+  primaryColors = ["#333", "#fff", "#666"],
   ...props
 }: ThemeBaseProps<C>) => (
   <Box
     className={cx(
       css`
         & {
-          --joga-foreground-color: ${jogaVar(foregroundColor)};
-          --joga-primary-button-border: ${jogaVar(primaryButtonBorder)};
-          --joga-primary-button-color: ${jogaVar(primaryButtonColor)};
-          --joga-primary-button-background-color: ${jogaVar(
-            primaryButtonBackgroundColor
-          )};
-          --joga-primary-color: ${jogaVar(primaryColor)};
+          --joga-default-color-0: ${defaultColors[0]};
+          --joga-default-color-1: ${defaultColors[1]};
+          --joga-default-color-2: ${defaultColors[2]};
+
+          --joga-primary-color-0: ${primaryColors[0]};
+          --joga-primary-color-1: ${primaryColors[1]};
+          --joga-primary-color-2: ${primaryColors[2]};
         }
       `,
       className

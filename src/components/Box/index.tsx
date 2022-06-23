@@ -4,14 +4,18 @@ import { jogaVar } from "../../utils";
 
 injectGlobal`
   :root {
-    --joga-primary: #333;
-    --joga-foreground: #fff;
-
     --joga-xs: 2px;
     --joga-s: 4px;
     --joga-m: 8px;
     --joga-l: 16px;
     --joga-xl: 32px;
+
+    --joga-default-color-0: #fff;
+    --joga-default-color-1: #333;
+    --joga-default-color-2: #666;
+    --joga-primary-color-0: #333;
+    --joga-primary-color-1: #fff;
+    --joga-primary-color-2: #666;
   }
 `;
 

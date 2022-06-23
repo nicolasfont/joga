@@ -1,14 +1,6 @@
-import { css, cx, injectGlobal } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
 import { Text, TextProps } from "../Text";
-
-injectGlobal`
-  :root {
-    --joga-primary-button-color: var(--joga-foreground);
-    --joga-primary-button-background-color: var(--joga-primary);
-    --joga-primary-button-border: 0;
-  }
-`;
 
 export type ButtonProps<C extends ElementType> = TextProps<C> & {
   onClick?: () => void;
@@ -17,9 +9,9 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 export const Button = <C extends ElementType>({
   padding = 8,
   weight = 500,
-  border = "primary-button-border",
-  color = "primary-button-color",
-  backgroundColor = "primary-button-background-color",
+  border = "0",
+  color = "primary-color-1",
+  backgroundColor = "primary-color-0",
   className,
   children,
   ...props
