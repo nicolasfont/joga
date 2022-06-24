@@ -13,7 +13,6 @@ export const Button = <C extends ElementType>({
   borderRadius = "default-border-radius",
   color = "default-color-1",
   className,
-  children,
   ...props
 }: ButtonProps<C>) => (
   <Text
@@ -31,7 +30,5 @@ export const Button = <C extends ElementType>({
       className
     )}
     {...props}
-  >
-    {children}
-  </Text>
+  />
 );
