@@ -1,3 +1,4 @@
+import { css, cx } from "@emotion/css";
 import { ChangeEvent, ElementType } from "react";
 import { Box, BoxProps } from "../..";
 import { hash } from "./hash";
@@ -13,6 +14,7 @@ export const Select = <C extends ElementType>({
   border = "default-border",
   borderColor = "default-color-2",
   borderRadius = "default-border-radius",
+  className,
   onChange = () => {},
   value,
   options = [],
@@ -22,6 +24,12 @@ export const Select = <C extends ElementType>({
 }: SelectProps<C>) => (
   <Box
     as="select"
+    className={cx(
+      css`
+        cursor: pointer;
+      `,
+      className
+    )}
     border={border}
     borderColor={borderColor}
     borderRadius={borderRadius}
