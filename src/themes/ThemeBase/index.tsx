@@ -1,6 +1,7 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
 import { Box, BoxProps } from "../..";
+import { jogaVar } from "../../utils";
 
 export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
   defaultColors?: string[];
@@ -25,7 +26,7 @@ export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
 export const ThemeBase = <C extends ElementType>({
   className,
   defaultColors = ["#fff", "#333", "#999"],
-  primaryColors = ["#333", "#fff", "#666"],
+  primaryColors = ["#333", "#fff", "#999"],
   spacings = {
     xs: "2px",
     s: "4px",
@@ -36,7 +37,7 @@ export const ThemeBase = <C extends ElementType>({
   lineHeight = "1.6",
   defaultBorder = "1px solid",
   defaultBorderRadius = "4px",
-  defaultInputPadding = "var(--joga-m)",
+  defaultInputPadding = "m",
   ...props
 }: ThemeBaseProps<C>) => (
   <Box
@@ -45,21 +46,21 @@ export const ThemeBase = <C extends ElementType>({
     className={cx(
       css`
         & {
-          --joga-xs: ${spacings.xs};
-          --joga-s: ${spacings.s};
-          --joga-m: ${spacings.m};
-          --joga-l: ${spacings.l};
-          --joga-xl: ${spacings.xl};
-          --joga-default-color-0: ${defaultColors[0]};
-          --joga-default-color-1: ${defaultColors[1]};
-          --joga-default-color-2: ${defaultColors[2]};
-          --joga-primary-color-0: ${primaryColors[0]};
-          --joga-primary-color-1: ${primaryColors[1]};
-          --joga-primary-color-2: ${primaryColors[2]};
-          --joga-line-height: ${lineHeight};
-          --joga-default-border: ${defaultBorder};
-          --joga-default-border-radius: ${defaultBorderRadius};
-          --joga-default-input-padding: ${defaultInputPadding};
+          --joga-xs: ${jogaVar(spacings.xs)};
+          --joga-s: ${jogaVar(spacings.s)};
+          --joga-m: ${jogaVar(spacings.m)};
+          --joga-l: ${jogaVar(spacings.l)};
+          --joga-xl: ${jogaVar(spacings.xl)};
+          --joga-default-color-0: ${jogaVar(defaultColors[0])};
+          --joga-default-color-1: ${jogaVar(defaultColors[1])};
+          --joga-default-color-2: ${jogaVar(defaultColors[2])};
+          --joga-primary-color-0: ${jogaVar(primaryColors[0])};
+          --joga-primary-color-1: ${jogaVar(primaryColors[1])};
+          --joga-primary-color-2: ${jogaVar(primaryColors[2])};
+          --joga-line-height: ${jogaVar(lineHeight)};
+          --joga-default-border: ${jogaVar(defaultBorder)};
+          --joga-default-border-radius: ${jogaVar(defaultBorderRadius)};
+          --joga-default-input-padding: ${jogaVar(defaultInputPadding)};
         }
       `,
       className

@@ -4,6 +4,8 @@ import { Box, BoxProps } from "../..";
 import { jogaVar } from "../../utils";
 
 export type TextInputProps<C extends ElementType> = BoxProps<C> & {
+  caretColor?: string;
+  focusedBorderColor?: string;
   onChange?: (text: string) => void;
   placeholder?: string;
   value?: string;
@@ -13,7 +15,9 @@ export const TextInput = <C extends ElementType>({
   border = "default-border",
   borderColor = "default-color-2",
   borderRadius = "default-border-radius",
+  caretColor = "default-color-1",
   className,
+  focusedBorderColor = "primary-color-0",
   onChange = () => {},
   padding = "default-input-padding",
   ...props
@@ -34,6 +38,11 @@ export const TextInput = <C extends ElementType>({
           color: ${jogaVar(borderColor)};
           opacity: 1;
         }
+        &:focus {
+          border-color: ${jogaVar(focusedBorderColor)};
+        }
+        outline: none;
+        caret-color: ${jogaVar(caretColor)};
       `,
       className
     )}

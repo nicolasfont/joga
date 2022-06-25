@@ -7,6 +7,8 @@ import {
   Row,
   Stack,
 } from "../..";
+import { TextInput } from "../../inputs";
+import { Text } from "../../text";
 
 export default {
   title: "Examples/ExampleForm",
@@ -31,6 +33,10 @@ export const ExampleForm = () => (
       eu turpis. Adipiscing enim eu turpis egestas. Pellentesque sit amet
       porttitor eget dolor morbi non arcu.
     </Paragraph>
+    <Stack gap="m">
+      <Text weight={500}>Name</Text>
+      <TextInput placeholder="What is your name?" />
+    </Stack>
     <Row gap="m" justify="end">
       <OutlineButton>Cancel</OutlineButton>
       <PrimaryButton>Submit</PrimaryButton>
