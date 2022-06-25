@@ -12,13 +12,15 @@ injectGlobal`
 
     --joga-default-color-0: #fff;
     --joga-default-color-1: #333;
-    --joga-default-color-2: #666;
+    --joga-default-color-2: #999;
     --joga-primary-color-0: #333;
     --joga-primary-color-1: #fff;
-    --joga-primary-color-2: #666;
+    --joga-primary-color-2: #999;
 
     --joga-default-border: 1px solid;
     --joga-default-border-radius: 4px;
+
+    --joga-default-input-padding: var(--joga-m);
   }
 `;
 
@@ -28,6 +30,7 @@ export type BoxProps<C extends ElementType> = React.ComponentPropsWithoutRef<C> 
   as?: C;
   backgroundColor?: string;
   border?: string;
+  borderColor?: string;
   borderRadius?: string;
   children?: ReactNode;
   className?: string;
@@ -52,6 +55,7 @@ export const Box = <C extends ElementType = "div">({
   as,
   backgroundColor = "transparent",
   border,
+  borderColor,
   borderRadius,
   className,
   color,
@@ -73,6 +77,7 @@ export const Box = <C extends ElementType = "div">({
           ${color && `color: ${jogaVar(color)};`}
           ${backgroundColor && `background-color: ${jogaVar(backgroundColor)};`}
           ${border && `border: ${jogaVar(border)};`}
+          ${borderColor && `border-color: ${jogaVar(borderColor)};`}
           ${borderRadius && `border-radius: ${jogaVar(borderRadius)};`}
           ${direction && `flex-direction: ${direction};`}
           ${flex && `flex: ${flex};`}

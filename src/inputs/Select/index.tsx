@@ -10,17 +10,25 @@ export type SelectProps<C extends ElementType> = BoxProps<C> & {
 };
 
 export const Select = <C extends ElementType>({
+  border = "default-border",
+  borderColor = "default-color-2",
+  borderRadius = "default-border-radius",
   onChange = () => {},
   value,
   options = [],
+  padding = "default-input-padding",
   placeholder,
   ...props
 }: SelectProps<C>) => (
   <Box
     as="select"
+    border={border}
+    borderColor={borderColor}
+    borderRadius={borderRadius}
     onChange={(e: ChangeEvent<HTMLSelectElement>) => {
       onChange(options[e.target.selectedIndex + (placeholder ? -1 : 0)]?.value);
     }}
+    padding={padding}
     value={value === undefined ? undefined : hash(value)}
     {...props}
   >

@@ -9,7 +9,8 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 export const Button = <C extends ElementType>({
   padding = "m",
   weight = 500,
-  border = "0",
+  border = "default-border",
+  borderColor = "transparent",
   borderRadius = "default-border-radius",
   color = "default-color-1",
   className,
@@ -19,6 +20,7 @@ export const Button = <C extends ElementType>({
     as="button"
     type="button"
     border={border}
+    borderColor={borderColor}
     borderRadius={borderRadius}
     padding={padding}
     weight={weight}
