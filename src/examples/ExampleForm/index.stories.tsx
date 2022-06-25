@@ -7,7 +7,7 @@ import {
   Row,
   Stack,
 } from "../..";
-import { TextInput } from "../../inputs";
+import { PasswordInput, TextInput } from "../../inputs";
 import { Text } from "../../text";
 
 export default {
@@ -36,6 +36,10 @@ export const ExampleForm = () => (
     <Stack gap="m">
       <Text weight={500}>Name</Text>
       <TextInput placeholder="What is your name?" />
+    </Stack>
+    <Stack gap="m">
+      <Text weight={500}>Password</Text>
+      <PasswordInput placeholder="What is your password?" />
     </Stack>
     <Row gap="m" justify="end">
       <OutlineButton>Cancel</OutlineButton>
