@@ -15,6 +15,7 @@ export const TextInput = <C extends ElementType>({
   border = "default-border",
   borderColor = "default-color-2",
   borderRadius = "default-border-radius",
+  color = "default-color-1",
   caretColor = "default-color-1",
   className,
   focusedBorderColor = "primary-color-0",
@@ -28,6 +29,7 @@ export const TextInput = <C extends ElementType>({
     border={border}
     borderColor={borderColor}
     borderRadius={borderRadius}
+    color={color}
     onChange={(e: ChangeEvent<HTMLInputElement>) => {
       onChange(e.target.value);
     }}
