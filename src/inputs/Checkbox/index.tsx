@@ -1,7 +1,7 @@
 import { ChangeEvent, ElementType } from "react";
-import { Box, BoxProps } from "../..";
+import { Stack, StackProps } from "../..";
 
-export type CheckboxProps<C extends ElementType> = BoxProps<C> & {
+export type CheckboxProps<C extends ElementType> = StackProps<C> & {
   checked?: boolean;
   onChange?: (checked: boolean) => void;
 };
@@ -10,7 +10,7 @@ export const Checkbox = <C extends ElementType>({
   onChange = () => {},
   ...props
 }: CheckboxProps<C>) => (
-  <Box
+  <Stack
     as="input"
     type="checkbox"
     onChange={(e: ChangeEvent<HTMLInputElement>) => {

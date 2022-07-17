@@ -1,9 +1,9 @@
 import { css, cx } from "@emotion/css";
 import { ChangeEvent, ElementType } from "react";
-import { Box, BoxProps } from "../..";
+import { Stack, StackProps } from "../..";
 import { hash } from "./hash";
 
-export type SelectProps<C extends ElementType> = BoxProps<C> & {
+export type SelectProps<C extends ElementType> = StackProps<C> & {
   value?: any;
   onChange?: (value?: any) => void;
   options?: { label: string; value: any }[];
@@ -22,7 +22,7 @@ export const Select = <C extends ElementType>({
   placeholder,
   ...props
 }: SelectProps<C>) => (
-  <Box
+  <Stack
     as="select"
     className={cx(
       css`
@@ -49,5 +49,5 @@ export const Select = <C extends ElementType>({
         </option>
       );
     })}
-  </Box>
+  </Stack>
 );

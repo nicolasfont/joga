@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Box, Grid, Text } from "../..";
+import { Stack, Grid, Text } from "../..";
 
 describe("Grid", () => {
   it("should render with default props", () => {
@@ -58,18 +58,18 @@ describe("Grid", () => {
           "footer footer"
         `}
       >
-        <Box area="header">
+        <Stack area="header">
           <Text>Lorem</Text>
-        </Box>
-        <Box area="side">
+        </Stack>
+        <Stack area="side">
           <Text>ipsum</Text>
-        </Box>
-        <Box area="main">
+        </Stack>
+        <Stack area="main">
           <Text>dolor</Text>
-        </Box>
-        <Box area="footer">
+        </Stack>
+        <Stack area="footer">
           <Text>sit</Text>
-        </Box>
+        </Stack>
       </Grid>
     );
     expect(screen.getByText("Lorem")).toBeInTheDocument();

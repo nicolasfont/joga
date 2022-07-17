@@ -1,9 +1,9 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
-import { Box, BoxProps } from "../..";
+import { Stack, StackProps } from "../..";
 import { jogaVar } from "../../utils";
 
-export type ThemeBaseProps<C extends ElementType> = BoxProps<C> & {
+export type ThemeBaseProps<C extends ElementType> = StackProps<C> & {
   defaultColors?: string[];
   alternateColors?: string[];
   primaryColors?: string[];
@@ -40,7 +40,7 @@ export const ThemeBase = <C extends ElementType>({
   defaultInputPadding = "m",
   ...props
 }: ThemeBaseProps<C>) => (
-  <Box
+  <Stack
     backgroundColor="default-color-0"
     color="default-color-1"
     className={cx(

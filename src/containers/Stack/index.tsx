@@ -1,9 +1,94 @@
-import { ElementType } from "react";
-import { Box, BoxProps } from "../..";
+import { css, cx, injectGlobal } from "@emotion/css";
+import { ElementType, ReactNode } from "react";
+import { jogaVar } from "../..";
 
-export type StackProps<C extends ElementType> = BoxProps<C>;
+injectGlobal`
+  :root {
+    --joga-xs: 2px;
+    --joga-s: 4px;
+    --joga-m: 8px;
+    --joga-l: 16px;
+    --joga-xl: 32px;
 
-export const Stack = <C extends ElementType>({
+    --joga-default-color-0: #fff;
+    --joga-default-color-1: #333;
+    --joga-default-color-2: #999;
+    --joga-primary-color-0: #333;
+    --joga-primary-color-1: #fff;
+    --joga-primary-color-2: #999;
+
+    --joga-default-border: 1px solid;
+    --joga-default-border-radius: 4px;
+
+    --joga-default-input-padding: var(--joga-m);
+  }
+`;
+
+export type StackProps<C extends ElementType> =
+  React.ComponentPropsWithoutRef<C> & {
+    align?: "center" | "start" | "end" | "stretch";
+    area?: string;
+    as?: C;
+    backgroundColor?: string;
+    border?: string;
+    borderColor?: string;
+    borderRadius?: string;
+    children?: ReactNode;
+    className?: string;
+    color?: string;
+    direction?: "column" | "row";
+    flex?: string;
+    gap?: string;
+    justify?:
+      | "center"
+      | "start"
+      | "end"
+      | "space-around"
+      | "space-between"
+      | "space-evenly"
+      | "stretch";
+    padding?: string;
+  };
+
+export const Stack = <C extends ElementType = "div">({
+  align,
+  area,
+  as,
+  backgroundColor = "transparent",
+  border,
+  borderColor,
+  borderRadius,
+  className,
+  color,
   direction = "column",
+  flex,
+  gap,
+  justify,
+  padding,
   ...props
-}: StackProps<C>) => <Box direction={direction} {...props} />;
+}: StackProps<C>) => {
+  const Component = as || "div";
+  return (
+    <Component
+      className={cx(
+        css`
+          display: flex;
+          ${align && `align-items: ${align};`}
+          ${area && `grid-area: ${area};`}
+          ${color && `color: ${jogaVar(color)};`}
+          ${backgroundColor && `background-color: ${jogaVar(backgroundColor)};`}
+          ${border && `border: ${jogaVar(border)};`}
+          ${borderColor && `border-color: ${jogaVar(borderColor)};`}
+          ${borderRadius && `border-radius: ${jogaVar(borderRadius)};`}
+          ${direction && `flex-direction: ${direction};`}
+          ${flex && `flex: ${flex};`}
+          ${gap && `gap: ${jogaVar(gap)};`}
+          ${justify && `justify-content: ${justify};`}
+          ${padding && `padding: ${jogaVar(padding)};`}
+        `,
+        className
+      )}
+      {...props}
+    />
+  );
+};

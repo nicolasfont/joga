@@ -1,9 +1,9 @@
 import { css, cx } from "@emotion/css";
 import { ChangeEvent, ElementType } from "react";
-import { Box, BoxProps } from "../..";
+import { Stack, StackProps } from "../..";
 import { jogaVar } from "../../utils";
 
-export type TextInputProps<C extends ElementType> = BoxProps<C> & {
+export type TextInputProps<C extends ElementType> = StackProps<C> & {
   caretColor?: string;
   focusedBorderColor?: string;
   onChange?: (text: string) => void;
@@ -23,7 +23,7 @@ export const TextInput = <C extends ElementType>({
   padding = "default-input-padding",
   ...props
 }: TextInputProps<C>) => (
-  <Box
+  <Stack
     as="input"
     type="text"
     border={border}

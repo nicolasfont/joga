@@ -1,9 +1,9 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
 import { jogaVar } from "../../utils";
-import { Box, BoxProps } from "../..";
+import { Stack, StackProps } from "../..";
 
-export type TextProps<C extends ElementType> = BoxProps<C> & {
+export type TextProps<C extends ElementType> = StackProps<C> & {
   color?: string;
   family?: string;
   lineHeight?: string;
@@ -22,7 +22,7 @@ export const Text = <C extends ElementType>({
   weight = 400,
   ...props
 }: TextProps<C>) => (
-  <Box
+  <Stack
     as="span"
     className={cx(
       css`

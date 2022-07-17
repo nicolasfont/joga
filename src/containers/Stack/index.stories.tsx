@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { PrimaryButton, Text, Stack } from "../..";
+import { Stack, PrimaryButton, Text } from "../..";
 
 export default {
   title: "Containers/Stack",
@@ -11,6 +11,12 @@ export const Default = () => (
     <Text>One</Text>
     <Text>Two</Text>
     <Text>Three</Text>
+  </Stack>
+);
+
+export const AsAnchor = () => (
+  <Stack as="a" href="https://jogajs.com">
+    Click Me
   </Stack>
 );
 
