@@ -7,33 +7,31 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 };
 
 export const Button = <C extends ElementType>({
+  theme = useTheme(),
   padding = "m",
   weight = 500,
-  border,
+  border = theme.border,
   borderColor = "transparent",
-  borderRadius,
-  color,
+  borderRadius = theme.borderRadius,
+  color = theme.colors.foreground,
   className,
   ...props
-}: ButtonProps<C>) => {
-  const theme = useTheme();
-  return (
-    <Text
-      as="button"
-      type="button"
-      border={border || theme.border}
-      borderColor={borderColor || theme.colors.border}
-      borderRadius={borderRadius || theme.borderRadius}
-      padding={padding}
-      weight={weight}
-      color={color || theme.colors.foreground}
-      className={cx(
-        css`
-          cursor: pointer;
-        `,
-        className
-      )}
-      {...props}
-    />
-  );
-};
+}: ButtonProps<C>) => (
+  <Text
+    as="button"
+    type="button"
+    border={border}
+    borderColor={borderColor}
+    borderRadius={borderRadius}
+    padding={padding}
+    weight={weight}
+    color={color}
+    className={cx(
+      css`
+        cursor: pointer;
+      `,
+      className
+    )}
+    {...props}
+  />
+);

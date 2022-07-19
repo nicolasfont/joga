@@ -4,18 +4,10 @@ import { Button, ButtonProps, useTheme } from "../..";
 export type OutlineButtonProps<C extends ElementType> = ButtonProps<C>;
 
 export const OutlineButton = <C extends ElementType>({
-  border,
-  color,
-  borderColor,
+  theme = useTheme(),
+  borderColor = theme.colors.accent,
+  color = theme.colors.accent,
   ...props
-}: OutlineButtonProps<C>) => {
-  const theme = useTheme();
-  return (
-    <Button
-      border={border || theme.border}
-      borderColor={borderColor || theme.colors.accent}
-      color={color || theme.colors.accent}
-      {...props}
-    />
-  );
-};
+}: OutlineButtonProps<C>) => (
+  <Button borderColor={borderColor} color={color} {...props} />
+);

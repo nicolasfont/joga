@@ -1,6 +1,6 @@
 import { css, cx } from "@emotion/css";
 import { ElementType, ReactNode } from "react";
-import { useTheme, Spacing } from "../..";
+import { useTheme, Spacing, ThemeType } from "../..";
 
 export type StackProps<C extends ElementType> =
   React.ComponentPropsWithoutRef<C> & {
@@ -26,9 +26,11 @@ export type StackProps<C extends ElementType> =
       | "space-evenly"
       | "stretch";
     padding?: Spacing;
+    theme?: ThemeType;
   };
 
 export const Stack = <C extends ElementType = "div">({
+  theme = useTheme(),
   align,
   area,
   as,
@@ -45,8 +47,6 @@ export const Stack = <C extends ElementType = "div">({
   padding,
   ...props
 }: StackProps<C>) => {
-  const theme = useTheme();
-
   const Component = as || "div";
   return (
     <Component
@@ -57,9 +57,9 @@ export const Stack = <C extends ElementType = "div">({
           ${area && `grid-area: ${area};`}
           ${color && `color: ${color};`}
           ${backgroundColor && `background-color: ${backgroundColor};`}
-          ${border && `border: ${theme.border};`}
+          ${border && `border: ${border};`}
           ${borderColor && `border-color: ${borderColor};`}
-          ${borderRadius && `border-radius: ${theme.borderRadius};`}
+          ${borderRadius && `border-radius: ${borderRadius};`}
           ${direction && `flex-direction: ${direction};`}
           ${flex && `flex: ${flex};`}
           ${gap && `gap: ${theme.spacings[gap]};`}

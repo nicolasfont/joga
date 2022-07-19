@@ -11,9 +11,10 @@ export type SelectProps<C extends ElementType> = StackProps<C> & {
 };
 
 export const Select = <C extends ElementType>({
-  border,
-  borderColor,
-  borderRadius,
+  theme = useTheme(),
+  border = theme.border,
+  borderColor = theme.colors.border,
+  borderRadius = theme.borderRadius,
   className,
   onChange = () => {},
   value,
@@ -21,38 +22,33 @@ export const Select = <C extends ElementType>({
   padding = "m",
   placeholder,
   ...props
-}: SelectProps<C>) => {
-  const theme = useTheme();
-  return (
-    <Stack
-      as="select"
-      className={cx(
-        css`
-          cursor: pointer;
-        `,
-        className
-      )}
-      border={border || theme.border}
-      borderColor={borderColor || theme.colors.border}
-      borderRadius={borderRadius || theme.borderRadius}
-      onChange={(e: ChangeEvent<HTMLSelectElement>) => {
-        onChange(
-          options[e.target.selectedIndex + (placeholder ? -1 : 0)]?.value
-        );
-      }}
-      padding={padding}
-      value={value === undefined ? undefined : hash(value)}
-      {...props}
-    >
-      {placeholder && <option value="">{placeholder}</option>}
-      {options.map((option: { label: string; value: any }) => {
-        const key = hash(option.value);
-        return (
-          <option key={key} value={key}>
-            {option.label}
-          </option>
-        );
-      })}
-    </Stack>
-  );
-};
+}: SelectProps<C>) => (
+  <Stack
+    as="select"
+    className={cx(
+      css`
+        cursor: pointer;
+      `,
+      className
+    )}
+    border={border}
+    borderColor={borderColor}
+    borderRadius={borderRadius}
+    onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+      onChange(options[e.target.selectedIndex + (placeholder ? -1 : 0)]?.value);
+    }}
+    padding={padding}
+    value={value === undefined ? undefined : hash(value)}
+    {...props}
+  >
+    {placeholder && <option value="">{placeholder}</option>}
+    {options.map((option: { label: string; value: any }) => {
+      const key = hash(option.value);
+      return (
+        <option key={key} value={key}>
+          {option.label}
+        </option>
+      );
+    })}
+  </Stack>
+);
