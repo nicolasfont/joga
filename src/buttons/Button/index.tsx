@@ -10,16 +10,18 @@ export const Button = <C extends ElementType>({
   theme = useTheme(),
   padding = "m",
   weight = 500,
+  backgroundColor = theme.accentColor,
   border = theme.border,
-  borderColor = "transparent",
+  borderColor = theme.accentColor,
   borderRadius = theme.borderRadius,
-  color = theme.fontColor,
+  color = theme.fontAccentColor,
   className,
   ...props
 }: ButtonProps<C>) => (
   <Text
     as="button"
     type="button"
+    backgroundColor={backgroundColor}
     border={border}
     borderColor={borderColor}
     borderRadius={borderRadius}

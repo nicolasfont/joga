@@ -1,12 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import {
-  Heading,
-  OutlineButton,
-  Paragraph,
-  PrimaryButton,
-  Row,
-  Stack,
-} from "../..";
+import { Heading, OutlineButton, Paragraph, Button, Row, Stack } from "../..";
 import { PasswordInput, TextInput } from "../../inputs";
 import { Text } from "../../text";
 
@@ -33,7 +26,7 @@ export const ExampleForm = () => (
     </Stack>
     <Row gap="m" justify="end">
       <OutlineButton>Cancel</OutlineButton>
-      <PrimaryButton>Submit</PrimaryButton>
+      <Button>Submit</Button>
     </Row>
   </Stack>
 );

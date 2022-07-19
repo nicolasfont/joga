@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { PrimaryButton, Row, Text } from "../..";
+import { Button, Row, Text } from "../..";
 
 export default {
   title: "Containers/Row",
@@ -16,16 +16,16 @@ export const Default = () => (
 
 export const WithGap = () => (
   <Row gap="m">
-    <PrimaryButton>One</PrimaryButton>
-    <PrimaryButton>Two</PrimaryButton>
-    <PrimaryButton>Three</PrimaryButton>
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
   </Row>
 );
 
 export const Centered = () => (
   <Row gap="m" justify="center" align="center">
-    <PrimaryButton>One</PrimaryButton>
+    <Button>One</Button>
     <Text>Two</Text>
-    <PrimaryButton>Three</PrimaryButton>
+    <Button>Three</Button>
   </Row>
 );
