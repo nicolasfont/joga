@@ -11,7 +11,7 @@ npm i joga
 ## Usage
 
 ```jsx
-import { Heading, OutlineButton, Paragraph, Button, Row, Stack } from "joga";
+import { Button, Heading, OutlineButton, Paragraph, Row, Stack } from "joga";
 
 export const Example = () => (
   <Stack gap="m">
