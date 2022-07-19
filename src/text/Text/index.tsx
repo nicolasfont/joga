@@ -1,7 +1,6 @@
 import { css, cx } from "@emotion/css";
 import { ElementType } from "react";
-import { jogaVar } from "../../utils";
-import { Stack, StackProps } from "../..";
+import { Stack, StackProps, useTheme } from "../..";
 
 export type TextProps<C extends ElementType> = StackProps<C> & {
   color?: string;
@@ -30,7 +29,7 @@ export const Text = <C extends ElementType>({
         font-family: ${family};
         font-size: ${size}rem;
         font-weight: ${weight};
-        line-height: ${jogaVar(lineHeight)};
+        line-height: ${lineHeight};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       `,

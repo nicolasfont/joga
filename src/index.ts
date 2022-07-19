@@ -5,4 +5,3 @@ export * from "./inputs";
 export * from "./other";
 export * from "./text";
 export * from "./themes";
-export * from "./utils";

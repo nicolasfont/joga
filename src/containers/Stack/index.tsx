@@ -1,28 +1,6 @@
-import { css, cx, injectGlobal } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { ElementType, ReactNode } from "react";
-import { jogaVar } from "../..";
-
-injectGlobal`
-  :root {
-    --joga-xs: 2px;
-    --joga-s: 4px;
-    --joga-m: 8px;
-    --joga-l: 16px;
-    --joga-xl: 32px;
-
-    --joga-default-color-0: #fff;
-    --joga-default-color-1: #333;
-    --joga-default-color-2: #999;
-    --joga-primary-color-0: #333;
-    --joga-primary-color-1: #fff;
-    --joga-primary-color-2: #999;
-
-    --joga-default-border: 1px solid;
-    --joga-default-border-radius: 4px;
-
-    --joga-default-input-padding: var(--joga-m);
-  }
-`;
+import { useTheme, Spacing } from "../..";
 
 export type StackProps<C extends ElementType> =
   React.ComponentPropsWithoutRef<C> & {
@@ -38,7 +16,7 @@ export type StackProps<C extends ElementType> =
     color?: string;
     direction?: "column" | "row";
     flex?: string;
-    gap?: string;
+    gap?: Spacing;
     justify?:
       | "center"
       | "start"
@@ -47,7 +25,7 @@ export type StackProps<C extends ElementType> =
       | "space-between"
       | "space-evenly"
       | "stretch";
-    padding?: string;
+    padding?: Spacing;
   };
 
 export const Stack = <C extends ElementType = "div">({
@@ -67,6 +45,8 @@ export const Stack = <C extends ElementType = "div">({
   padding,
   ...props
 }: StackProps<C>) => {
+  const theme = useTheme();
+
   const Component = as || "div";
   return (
     <Component
@@ -75,16 +55,16 @@ export const Stack = <C extends ElementType = "div">({
           display: flex;
           ${align && `align-items: ${align};`}
           ${area && `grid-area: ${area};`}
-          ${color && `color: ${jogaVar(color)};`}
-          ${backgroundColor && `background-color: ${jogaVar(backgroundColor)};`}
-          ${border && `border: ${jogaVar(border)};`}
-          ${borderColor && `border-color: ${jogaVar(borderColor)};`}
-          ${borderRadius && `border-radius: ${jogaVar(borderRadius)};`}
+          ${color && `color: ${color};`}
+          ${backgroundColor && `background-color: ${backgroundColor};`}
+          ${border && `border: ${theme.border};`}
+          ${borderColor && `border-color: ${borderColor};`}
+          ${borderRadius && `border-radius: ${theme.borderRadius};`}
           ${direction && `flex-direction: ${direction};`}
           ${flex && `flex: ${flex};`}
-          ${gap && `gap: ${jogaVar(gap)};`}
+          ${gap && `gap: ${theme.spacings[gap]};`}
           ${justify && `justify-content: ${justify};`}
-          ${padding && `padding: ${jogaVar(padding)};`}
+          ${padding && `padding: ${theme.spacings[padding]};`}
         `,
         className
       )}

@@ -1,16 +1,12 @@
-import { injectGlobal } from "@emotion/css";
 import { ElementType } from "react";
-import { Text, TextProps } from "../..";
-
-injectGlobal`
-  :root {
-    --joga-line-height: 1.6;
-  }
-`;
+import { Text, TextProps, useTheme } from "../..";
 
 export type ParagraphProps<C extends ElementType> = TextProps<C>;
 
 export const Paragraph = <C extends ElementType>({
-  lineHeight = "line-height",
+  lineHeight,
   ...props
-}: ParagraphProps<C>) => <Text lineHeight={lineHeight} {...props} />;
+}: ParagraphProps<C>) => {
+  const theme = useTheme();
+  return <Text lineHeight={lineHeight || theme.lineHeight} {...props} />;
+};

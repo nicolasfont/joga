@@ -1,7 +1,6 @@
 import { css, cx } from "@emotion/css";
 import { ChangeEvent, ElementType } from "react";
-import { Stack, StackProps } from "../..";
-import { jogaVar } from "../../utils";
+import { Stack, StackProps, useTheme } from "../..";
 
 export type TextInputProps<C extends ElementType> = StackProps<C> & {
   caretColor?: string;
@@ -12,42 +11,45 @@ export type TextInputProps<C extends ElementType> = StackProps<C> & {
 };
 
 export const TextInput = <C extends ElementType>({
-  border = "default-border",
-  borderColor = "default-color-2",
-  borderRadius = "default-border-radius",
-  color = "default-color-1",
-  caretColor = "default-color-1",
+  border,
+  borderColor,
+  borderRadius,
+  color,
+  caretColor,
   className,
-  focusedBorderColor = "primary-color-0",
+  focusedBorderColor,
   onChange = () => {},
-  padding = "default-input-padding",
+  padding = "m",
   ...props
-}: TextInputProps<C>) => (
-  <Stack
-    as="input"
-    type="text"
-    border={border}
-    borderColor={borderColor}
-    borderRadius={borderRadius}
-    color={color}
-    onChange={(e: ChangeEvent<HTMLInputElement>) => {
-      onChange(e.target.value);
-    }}
-    padding={padding}
-    className={cx(
-      css`
-        ::placeholder {
-          color: ${jogaVar(borderColor)};
-          opacity: 1;
-        }
-        &:focus {
-          border-color: ${jogaVar(focusedBorderColor)};
-        }
-        outline: none;
-        caret-color: ${jogaVar(caretColor)};
-      `,
-      className
-    )}
-    {...props}
-  />
-);
+}: TextInputProps<C>) => {
+  const theme = useTheme();
+  return (
+    <Stack
+      as="input"
+      type="text"
+      border={border || theme.border}
+      borderColor={borderColor || theme.colors.border}
+      borderRadius={borderRadius || theme.borderRadius}
+      color={color || theme.colors.foreground}
+      onChange={(e: ChangeEvent<HTMLInputElement>) => {
+        onChange(e.target.value);
+      }}
+      padding={padding}
+      className={cx(
+        css`
+          ::placeholder {
+            color: ${borderColor || theme.colors.border};
+            opacity: 1;
+          }
+          &:focus {
+            border-color: ${focusedBorderColor || theme.colors.accent};
+          }
+          outline: none;
+          caret-color: ${color || theme.colors.foreground};
+        `,
+        className
+      )}
+      {...props}
+    />
+  );
+};

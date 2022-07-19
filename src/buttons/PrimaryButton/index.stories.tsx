@@ -1,6 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
 import { useCallback, useState } from "react";
-import { PrimaryButton, Stack, Text, ThemeDark, ThemeLight } from "../..";
+import { PrimaryButton, Stack, Text, Theme } from "../..";
 
 export default {
   title: "Buttons/PrimaryButton",
@@ -34,15 +34,15 @@ export const WithGap = () => (
 );
 
 export const WithDarkTheme = () => (
-  <ThemeDark padding="l">
+  <Theme padding="l">
     <PrimaryButton>Click Me</PrimaryButton>
-  </ThemeDark>
+  </Theme>
 );
 
 export const TogglingThemes = () => {
   const [theme, setTheme] = useState("light");
 
-  const Theme = theme === "light" ? ThemeLight : ThemeDark;
+  // const Theme = theme === "light" ? Theme : Theme;
 
   const toggleTheme = useCallback(() => {
     setTheme(theme === "light" ? "dark" : "light");

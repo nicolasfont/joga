@@ -1,12 +1,19 @@
 import { ElementType } from "react";
-import { Button, ButtonProps } from "../..";
+import { Button, ButtonProps, useTheme } from "../..";
 
 export type PrimaryButtonProps<C extends ElementType> = ButtonProps<C>;
 
 export const PrimaryButton = <C extends ElementType>({
-  color = "primary-color-1",
-  backgroundColor = "primary-color-0",
+  color,
+  backgroundColor,
   ...props
-}: PrimaryButtonProps<C>) => (
-  <Button backgroundColor={backgroundColor} color={color} {...props} />
-);
+}: PrimaryButtonProps<C>) => {
+  const theme = useTheme();
+  return (
+    <Button
+      backgroundColor={backgroundColor || theme.colors.accent}
+      color={color || theme.colors.foregroundAccent}
+      {...props}
+    />
+  );
+};

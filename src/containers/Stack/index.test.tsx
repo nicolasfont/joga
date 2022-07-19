@@ -132,36 +132,14 @@ describe("Stack", () => {
     render(<Stack gap="m">Lorem ipsum</Stack>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
-      "gap: var(--joga-m, m)"
-    );
-  });
-
-  it("should render with gap in pixels", () => {
-    render(<Stack gap="8px">Lorem ipsum</Stack>);
-    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
-      "gap: var(--joga-8px, 8px)"
-    );
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("gap: 8px");
   });
 
   it("should render with padding", () => {
     render(<Stack padding="m">Lorem ipsum</Stack>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
-      "padding: var(--joga-m, m)"
-    );
-  });
-
-  it("should render with padding in pixels", () => {
-    render(<Stack padding="12px">Lorem ipsum</Stack>);
-    expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
-      "padding: var(--joga-12px, 12px)"
-    );
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("padding: 8px");
   });
 
   it("should render with border", () => {
