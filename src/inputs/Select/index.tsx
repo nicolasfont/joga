@@ -13,7 +13,7 @@ export type SelectProps<C extends ElementType> = StackProps<C> & {
 export const Select = <C extends ElementType>({
   theme = useTheme(),
   border = theme.border,
-  borderColor = theme.colors.border,
+  borderColor = theme.borderColor,
   borderRadius = theme.borderRadius,
   className,
   onChange = () => {},

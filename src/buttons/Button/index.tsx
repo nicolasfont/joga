@@ -13,7 +13,7 @@ export const Button = <C extends ElementType>({
   border = theme.border,
   borderColor = "transparent",
   borderRadius = theme.borderRadius,
-  color = theme.colors.foreground,
+  color = theme.fontColor,
   className,
   ...props
 }: ButtonProps<C>) => (

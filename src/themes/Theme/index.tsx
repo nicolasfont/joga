@@ -4,13 +4,14 @@ import { Stack, StackProps } from "../..";
 export type Spacing = "xs" | "s" | "m" | "l" | "xl";
 
 export type ThemeType = {
-  colors: {
-    accent: string;
-    border: string;
-    background: string;
-    foreground: string;
-    foregroundAccent: string;
-  };
+  accentColor: string;
+  backgroundColor: string;
+  border: string;
+  borderColor: string;
+  borderRadius: string;
+  fontAccentColor: string;
+  fontColor: string;
+  lineHeight: string;
   spacings: {
     xs: string;
     s: string;
@@ -18,19 +19,17 @@ export type ThemeType = {
     l: string;
     xl: string;
   };
-  lineHeight: string;
-  border: string;
-  borderRadius: string;
 };
 
-export const defaultTheme = {
-  colors: {
-    accent: "#333",
-    border: "#999",
-    background: "#fff",
-    foreground: "#333",
-    foregroundAccent: "#fff",
-  },
+export const defaultTheme: ThemeType = {
+  accentColor: "#333",
+  backgroundColor: "#fff",
+  border: "1px solid",
+  borderColor: "#999",
+  borderRadius: "4px",
+  fontAccentColor: "#fff",
+  fontColor: "#333",
+  lineHeight: "1.6",
   spacings: {
     xs: "2px",
     s: "4px",
@@ -38,9 +37,6 @@ export const defaultTheme = {
     l: "16px",
     xl: "32px",
   },
-  lineHeight: "1.6",
-  border: "1px solid",
-  borderRadius: "4px",
 };
 
 export const ThemeContext = createContext<ThemeType>(defaultTheme);
@@ -49,33 +45,30 @@ export type ThemeProps<C extends ElementType> = StackProps<C> &
   Partial<ThemeType>;
 
 export const Theme = <C extends ElementType>({
-  colors,
-  spacings,
-  lineHeight,
-  border,
-  borderRadius,
+  accentColor = defaultTheme.accentColor,
+  backgroundColor = defaultTheme.backgroundColor,
+  border = defaultTheme.border,
+  borderColor = defaultTheme.borderColor,
+  borderRadius = defaultTheme.borderRadius,
   children,
+  fontAccentColor = defaultTheme.fontAccentColor,
+  fontColor = defaultTheme.fontColor,
+  lineHeight = defaultTheme.lineHeight,
+  spacings = defaultTheme.spacings,
   ...props
 }: ThemeProps<C>) => (
-  <Stack
-    backgroundColor={colors?.background || defaultTheme.colors.background}
-    color={colors?.foreground || defaultTheme.colors.foreground}
-    {...props}
-  >
+  <Stack backgroundColor={backgroundColor} color={fontColor} {...props}>
     <ThemeContext.Provider
       value={{
-        ...defaultTheme,
-        colors: {
-          ...defaultTheme.colors,
-          ...colors,
-        },
-        spacings: {
-          ...defaultTheme.spacings,
-          ...spacings,
-        },
-        lineHeight: lineHeight || defaultTheme.lineHeight,
-        border: border || defaultTheme.border,
-        borderRadius: borderRadius || defaultTheme.borderRadius,
+        accentColor,
+        backgroundColor,
+        border,
+        borderColor,
+        borderRadius,
+        fontAccentColor,
+        fontColor,
+        lineHeight,
+        spacings,
       }}
     >
       {children}

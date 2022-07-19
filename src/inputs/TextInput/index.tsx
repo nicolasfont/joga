@@ -13,12 +13,12 @@ export type TextInputProps<C extends ElementType> = StackProps<C> & {
 export const TextInput = <C extends ElementType>({
   theme = useTheme(),
   border = theme.border,
-  borderColor = theme.colors.border,
+  borderColor = theme.borderColor,
   borderRadius = theme.borderRadius,
-  color = theme.colors.foreground,
+  color = theme.fontColor,
   caretColor,
   className,
-  focusedBorderColor = theme.colors.accent,
+  focusedBorderColor = theme.accentColor,
   onChange = () => {},
   padding = "m",
   ...props

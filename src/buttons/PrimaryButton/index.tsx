@@ -5,9 +5,9 @@ export type PrimaryButtonProps<C extends ElementType> = ButtonProps<C>;
 
 export const PrimaryButton = <C extends ElementType>({
   theme = useTheme(),
-  backgroundColor = theme.colors.accent,
-  borderColor = theme.colors.accent,
-  color = theme.colors.foregroundAccent,
+  backgroundColor = theme.accentColor,
+  borderColor = theme.accentColor,
+  color = theme.fontAccentColor,
   ...props
 }: PrimaryButtonProps<C>) => (
   <Button
