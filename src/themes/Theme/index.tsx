@@ -25,7 +25,7 @@ export const defaultTheme: ThemeType = {
   accentColor: "#333",
   backgroundColor: "#fff",
   border: "1px solid",
-  borderColor: "#999",
+  borderColor: "#333",
   borderRadius: "4px",
   fontAccentColor: "#fff",
   fontColor: "#333",
