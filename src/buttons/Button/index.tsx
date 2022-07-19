@@ -12,7 +12,7 @@ export const Button = <C extends ElementType>({
   weight = 500,
   backgroundColor = theme.accentColor,
   border = theme.border,
-  borderColor = theme.accentColor,
+  borderColor = backgroundColor,
   borderRadius = theme.borderRadius,
   color = theme.fontAccentColor,
   className,
