@@ -9,7 +9,7 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 export const Button = <C extends ElementType>({
   theme = useTheme(),
   padding = "m",
-  weight = 500,
+  fontWeight: weight = 500,
   backgroundColor = theme.accentColor,
   border = theme.border,
   borderColor = backgroundColor,
@@ -26,7 +26,7 @@ export const Button = <C extends ElementType>({
     borderColor={borderColor}
     borderRadius={borderRadius}
     padding={padding}
-    weight={weight}
+    fontWeight={weight}
     color={color}
     className={cx(
       css`

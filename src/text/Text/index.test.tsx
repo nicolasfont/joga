@@ -24,7 +24,7 @@ describe("Text", () => {
   });
 
   it("should render with family", () => {
-    render(<Text family="Test">Lorem ipsum</Text>);
+    render(<Text fontFamily="Test">Lorem ipsum</Text>);
 
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("font-family: Test");
@@ -38,14 +38,14 @@ describe("Text", () => {
   });
 
   it("should render with size", () => {
-    render(<Text size={2}>Lorem ipsum</Text>);
+    render(<Text fontSize={2}>Lorem ipsum</Text>);
 
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("font-size: 2rem");
   });
 
   it("should render with weight", () => {
-    render(<Text weight={500}>Lorem ipsum</Text>);
+    render(<Text fontWeight={500}>Lorem ipsum</Text>);
 
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("font-weight: 500");

@@ -9,7 +9,7 @@ export default {
 
 export const ExampleForm = () => (
   <Stack gap="l" padding="l">
-    <Heading size={1.2}>Please Read Carefully</Heading>
+    <Heading fontSize={1.2}>Please Read Carefully</Heading>
     <Paragraph>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc
@@ -17,11 +17,11 @@ export const ExampleForm = () => (
       facilisi cras fermentum odio eu.
     </Paragraph>
     <Stack gap="m">
-      <Text weight={500}>Name</Text>
+      <Text fontWeight={500}>Name</Text>
       <TextInput placeholder="What is your name?" />
     </Stack>
     <Stack gap="m">
-      <Text weight={500}>Password</Text>
+      <Text fontWeight={500}>Password</Text>
       <PasswordInput placeholder="What is your password?" />
     </Stack>
     <Row gap="m" justify="end">
