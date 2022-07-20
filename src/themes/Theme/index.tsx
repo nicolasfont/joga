@@ -11,6 +11,7 @@ export type ThemeType = {
   borderRadius: string;
   fontAccentColor: string;
   fontColor: string;
+  fontFamily: string;
   lineHeight: string;
   spacings: {
     xs: string;
@@ -29,6 +30,7 @@ export const defaultTheme: ThemeType = {
   borderRadius: "4px",
   fontAccentColor: "#fff",
   fontColor: "#333",
+  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
   lineHeight: "1.6",
   spacings: {
     xs: "2px",
@@ -53,6 +55,7 @@ export const Theme = <C extends ElementType>({
   children,
   fontAccentColor = defaultTheme.fontAccentColor,
   fontColor = defaultTheme.fontColor,
+  fontFamily = defaultTheme.fontFamily,
   lineHeight = defaultTheme.lineHeight,
   spacings = defaultTheme.spacings,
   ...props
@@ -67,6 +70,7 @@ export const Theme = <C extends ElementType>({
         borderRadius,
         fontAccentColor,
         fontColor,
+        fontFamily,
         lineHeight,
         spacings,
       }}

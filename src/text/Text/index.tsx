@@ -14,8 +14,9 @@ export type TextProps<C extends ElementType> = StackProps<C> & {
 };
 
 export const Text = <C extends ElementType>({
+  theme = useTheme(),
   className,
-  family = '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  family = theme.fontFamily,
   lineHeight = "1",
   size = 1,
   weight = 400,
