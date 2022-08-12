@@ -23,7 +23,7 @@ export const Text = <C extends ElementType>({
   ...props
 }: TextProps<C>) => (
   <Stack
-    as="span"
+    component="span"
     className={cx(
       css`
         display: inline-flex;

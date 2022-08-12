@@ -19,7 +19,7 @@ export const Button = <C extends ElementType>({
   ...props
 }: ButtonProps<C>) => (
   <Text
-    as="button"
+    component="button"
     type="button"
     backgroundColor={backgroundColor}
     border={border}

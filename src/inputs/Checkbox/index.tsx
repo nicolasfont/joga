@@ -11,7 +11,7 @@ export const Checkbox = <C extends ElementType>({
   ...props
 }: CheckboxProps<C>) => (
   <Stack
-    as="input"
+    component="input"
     type="checkbox"
     onChange={(e: ChangeEvent<HTMLInputElement>) => {
       onChange(e.target.checked);

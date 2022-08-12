@@ -174,9 +174,9 @@ describe("Stack", () => {
     );
   });
 
-  it("should render as anchor", () => {
+  it("should render as an anchor", () => {
     render(
-      <Stack as="a" href="https://jogajs.com">
+      <Stack component="a" href="https://jogajs.com">
         Lorem ipsum
       </Stack>
     );

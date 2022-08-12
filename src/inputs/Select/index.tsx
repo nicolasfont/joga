@@ -24,7 +24,7 @@ export const Select = <C extends ElementType>({
   ...props
 }: SelectProps<C>) => (
   <Stack
-    as="select"
+    component="select"
     className={cx(
       css`
         cursor: pointer;

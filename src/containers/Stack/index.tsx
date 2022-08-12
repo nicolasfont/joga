@@ -6,7 +6,6 @@ export type StackProps<C extends ElementType> =
   React.ComponentPropsWithoutRef<C> & {
     align?: "center" | "start" | "end" | "stretch";
     area?: string;
-    as?: C;
     backgroundColor?: string;
     border?: string;
     borderColor?: string;
@@ -14,6 +13,7 @@ export type StackProps<C extends ElementType> =
     children?: ReactNode;
     className?: string;
     color?: string;
+    component?: C;
     direction?: "column" | "row";
     flex?: string;
     gap?: Spacing;
@@ -33,13 +33,13 @@ export const Stack = <C extends ElementType = "div">({
   theme = useTheme(),
   align,
   area,
-  as,
   backgroundColor = "transparent",
   border,
   borderColor,
   borderRadius,
   className,
   color,
+  component,
   direction = "column",
   flex,
   gap,
@@ -47,7 +47,7 @@ export const Stack = <C extends ElementType = "div">({
   padding,
   ...props
 }: StackProps<C>) => {
-  const Component = as || "div";
+  const Component = component || "div";
   return (
     <Component
       className={cx(
@@ -55,11 +55,11 @@ export const Stack = <C extends ElementType = "div">({
           display: flex;
           ${align && `align-items: ${align};`}
           ${area && `grid-area: ${area};`}
-          ${color && `color: ${color};`}
           ${backgroundColor && `background-color: ${backgroundColor};`}
           ${border && `border: ${border};`}
           ${borderColor && `border-color: ${borderColor};`}
           ${borderRadius && `border-radius: ${borderRadius};`}
+          ${color && `color: ${color};`}
           ${direction && `flex-direction: ${direction};`}
           ${flex && `flex: ${flex};`}
           ${gap && `gap: ${theme.spacings[gap]};`}

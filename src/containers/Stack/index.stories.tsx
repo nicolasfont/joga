@@ -15,7 +15,7 @@ export const Default = () => (
 );
 
 export const AsAnchor = () => (
-  <Stack as="a" href="https://jogajs.com">
+  <Stack component="a" href="https://jogajs.com">
     Click Me
   </Stack>
 );

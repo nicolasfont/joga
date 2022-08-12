@@ -24,7 +24,7 @@ export const TextInput = <C extends ElementType>({
   ...props
 }: TextInputProps<C>) => (
   <Stack
-    as="input"
+    component="input"
     type="text"
     border={border}
     borderColor={borderColor}
