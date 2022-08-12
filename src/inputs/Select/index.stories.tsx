@@ -92,7 +92,7 @@ export const WithOnChange = () => (
 );
 
 export const WithHooks = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState<number>();
 
   return (
     <Select

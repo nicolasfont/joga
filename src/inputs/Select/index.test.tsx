@@ -6,7 +6,7 @@ import { hash } from "./hash";
 
 jest.mock("./hash");
 
-jest.mocked(hash).mockImplementation((value: {}) => String(value));
+jest.mocked(hash).mockImplementation((value) => String(value));
 
 describe("Select", () => {
   it("should render with default props", () => {

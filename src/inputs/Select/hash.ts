@@ -1,2 +1,2 @@
 import objectHash from "object-hash";
-export const hash = (value: {}) => objectHash(value);
+export const hash = <T>(value: T) => objectHash(value);

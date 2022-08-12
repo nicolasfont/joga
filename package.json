@@ -26,7 +26,10 @@
     "update": "npx npm-check-updates -u && npm i && npm t"
   },
   "lint-staged": {
-    "*.{js,ts,md,mdx,html,json}": "prettier --write"
+    "*.{js,ts,tsx,json}": [
+      "eslint",
+      "prettier --write"
+    ]
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -55,8 +58,13 @@
     "@types/object-hash": "^2.2.1",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "@vitejs/plugin-react": "^2.0.1",
     "babel-loader": "^8.2.5",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.1",
     "husky": "^8.0.1",
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^28.1.3",

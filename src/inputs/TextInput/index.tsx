@@ -16,10 +16,10 @@ export const TextInput = <C extends ElementType>({
   borderColor = theme.borderColor,
   borderRadius = theme.borderRadius,
   color = theme.fontColor,
-  caretColor,
+  caretColor = color,
   className,
   focusedBorderColor = theme.accentColor,
-  onChange = () => {},
+  onChange,
   padding = "m",
   ...props
 }: TextInputProps<C>) => (
@@ -31,7 +31,7 @@ export const TextInput = <C extends ElementType>({
     borderRadius={borderRadius}
     color={color}
     onChange={(e: ChangeEvent<HTMLInputElement>) => {
-      onChange(e.target.value);
+      onChange?.(e.target.value);
     }}
     padding={padding}
     className={cx(
@@ -44,7 +44,7 @@ export const TextInput = <C extends ElementType>({
           border-color: ${focusedBorderColor};
         }
         outline: none;
-        caret-color: ${color};
+        caret-color: ${caretColor};
       `,
       className
     )}

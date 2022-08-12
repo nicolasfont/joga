@@ -7,4 +7,10 @@ export const ThemeOrange = <C extends ElementType>({
   accentColor = "#f7931a",
   fontAccentColor = "#fff",
   ...props
-}: ThemeOrangeProps<C>) => <Theme accentColor={accentColor} {...props} />;
+}: ThemeOrangeProps<C>) => (
+  <Theme
+    accentColor={accentColor}
+    fontAccentColor={fontAccentColor}
+    {...props}
+  />
+);
