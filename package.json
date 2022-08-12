@@ -1,6 +1,5 @@
 {
   "name": "joga",
-  "version": "0.40.1",
   "license": "MIT",
   "repository": "github:nicolasfont/joga",
   "main": "./dist/joga.umd.js",
