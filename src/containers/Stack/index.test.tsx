@@ -153,9 +153,7 @@ describe("Stack", () => {
     render(<Stack borderRadius="8px">Lorem ipsum</Stack>);
     expect(screen.getByText("Lorem ipsum")).toBeInTheDocument();
     expect(screen.getByText("Lorem ipsum")).toHaveStyle("display: flex");
-    expect(screen.getByText("Lorem ipsum")).toHaveStyle(
-      "border: var(--joga-8px, 8px)"
-    );
+    expect(screen.getByText("Lorem ipsum")).toHaveStyle("border-radius: 8px");
   });
 
   it("should render with area", () => {
