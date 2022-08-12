@@ -8,14 +8,14 @@ export type ButtonProps<C extends ElementType> = TextProps<C> & {
 
 export const Button = <C extends ElementType>({
   theme = useTheme(),
-  padding = "m",
-  fontWeight: weight = 500,
-  backgroundColor = theme.accentColor,
+  backgroundColor = "transparent",
   border = theme.border,
-  borderColor = backgroundColor,
+  borderColor = "transparent",
   borderRadius = theme.borderRadius,
-  color = theme.fontAccentColor,
   className,
+  color = theme.fontColor,
+  fontWeight = 500,
+  padding = "m",
   ...props
 }: ButtonProps<C>) => (
   <Text
@@ -26,7 +26,7 @@ export const Button = <C extends ElementType>({
     borderColor={borderColor}
     borderRadius={borderRadius}
     padding={padding}
-    fontWeight={weight}
+    fontWeight={fontWeight}
     color={color}
     className={cx(
       css`
