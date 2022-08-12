@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Heading, OutlineButton, Paragraph, Button, Row, Stack } from "../..";
+import { Button, Heading, OutlineButton, Paragraph, Row, Stack } from "../..";
 import { PasswordInput, TextInput } from "../../inputs";
 import { Text } from "../../text";
 

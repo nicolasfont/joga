@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Stack, Button, Text } from "../..";
+import { Button, Stack, Text } from "../..";
 
 export default {
   title: "Containers/Stack",

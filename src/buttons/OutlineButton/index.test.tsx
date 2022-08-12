@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
 import { defaultTheme, OutlineButton } from "../..";
 
 describe("OutlineButton", () => {
@@ -7,7 +7,11 @@ describe("OutlineButton", () => {
     render(<OutlineButton>Lorem ipsum</OutlineButton>);
 
     expect(screen.getByRole("button")).toBeInTheDocument();
-    expect(screen.getByRole("button")).toHaveStyle(`border-color: ${defaultTheme.accentColor}`);
-    expect(screen.getByRole("button")).toHaveStyle(`color: ${defaultTheme.accentColor}`);
+    expect(screen.getByRole("button")).toHaveStyle(
+      `border-color: ${defaultTheme.accentColor}`
+    );
+    expect(screen.getByRole("button")).toHaveStyle(
+      `color: ${defaultTheme.accentColor}`
+    );
   });
 });

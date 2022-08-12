@@ -1,6 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
-import { TextInput } from "../..";
 import { useState } from "react";
+import { TextInput } from "../..";
 
 export default {
   title: "Inputs/TextInput",

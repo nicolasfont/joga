@@ -1,6 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
 import { useCallback, useState } from "react";
-import { SolidButton, Theme, ThemeDark, Theme as ThemeLight } from "../..";
+import { SolidButton, Theme, Theme as ThemeLight, ThemeDark } from "../..";
 import { ExampleForm } from "../../examples/ExampleForm/index.stories";
 
 export default {

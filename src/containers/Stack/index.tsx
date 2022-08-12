@@ -1,6 +1,6 @@
 import { css, cx } from "@emotion/css";
 import { ElementType, ReactNode } from "react";
-import { useTheme, Spacing, ThemeType } from "../..";
+import { Spacing, ThemeType, useTheme } from "../..";
 
 export type StackProps<C extends ElementType> =
   React.ComponentPropsWithoutRef<C> & {

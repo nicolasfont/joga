@@ -1,6 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { useCallback, useState } from "react";
-import { SolidButton, Stack, Text, Theme as ThemeLight, ThemeDark } from "../..";
+import { SolidButton, Stack, Text } from "../..";
 
 export default {
   title: "Buttons/SolidButton",

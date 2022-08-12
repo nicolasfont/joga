@@ -9,9 +9,5 @@ export const OutlineButton = <C extends ElementType>({
   color = theme.accentColor,
   ...props
 }: OutlineButtonProps<C>) => (
-  <Button
-    borderColor={borderColor}
-    color={color}
-    {...props}
-  />
+  <Button borderColor={borderColor} color={color} {...props} />
 );

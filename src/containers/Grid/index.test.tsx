@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Stack, Grid, Text } from "../..";
+import { render, screen } from "@testing-library/react";
+import { Grid, Stack, Text } from "../..";
 
 describe("Grid", () => {
   it("should render with default props", () => {
