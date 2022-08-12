@@ -11,7 +11,14 @@ npm i joga
 ## Usage
 
 ```jsx
-import { Button, Heading, OutlineButton, Paragraph, Row, Stack } from "joga";
+import {
+  Heading,
+  OutlineButton,
+  Paragraph,
+  Row,
+  SolidButton,
+  Stack,
+} from "joga";
 
 export const Example = () => (
   <Stack gap="m">
@@ -19,7 +26,7 @@ export const Example = () => (
     <Paragraph>Lorem ipsum</Paragraph>
     <Row gap="m" justify="end">
       <OutlineButton>Cancel</OutlineButton>
-      <Button>Send</Button>
+      <SolidButton>Send</SolidButton>
     </Row>
   </Stack>
 );
