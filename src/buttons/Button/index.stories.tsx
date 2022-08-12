@@ -7,5 +7,3 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 export const Default = () => <Button>Click Me</Button>;
-
-export const WithBorder = () => <Button borderColor="#3cb371">Click Me</Button>;
