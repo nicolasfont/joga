@@ -33,10 +33,10 @@ export const defaultTheme: ThemeType = {
   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
   lineHeight: "1.6",
   spacings: {
-    xs: "2px",
-    s: "4px",
-    m: "8px",
-    l: "16px",
+    xs: "4px",
+    s: "8px",
+    m: "16px",
+    l: "24px",
     xl: "32px",
   },
 };
