@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { SolidButton, Stack, Text } from "../..";
+import { SolidButton, Stack } from "../..";
 
 export default {
   title: "Buttons/SolidButton",
@@ -22,18 +22,4 @@ export const WithPaddings = () => (
     <SolidButton padding="l">Large Padding</SolidButton>
     <SolidButton padding="xl">Extra Large Padding</SolidButton>
   </Stack>
-);
-
-export const WithGap = () => (
-  <SolidButton gap="m">
-    <Text backgroundColor="red" padding="m">
-      Red
-    </Text>
-    <Text backgroundColor="green" padding="m">
-      Green
-    </Text>
-    <Text backgroundColor="blue" padding="m">
-      Blue
-    </Text>
-  </SolidButton>
 );

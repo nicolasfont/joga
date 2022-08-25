@@ -22,7 +22,7 @@ describe("Button", () => {
     );
     expect(screen.getByRole("button")).toHaveStyle("font-weight: 500");
     expect(screen.getByRole("button")).toHaveStyle(
-      `padding: ${defaultTheme.spacings.m}`
+      `padding: ${defaultTheme.spacings.s}`
     );
   });
 

@@ -36,8 +36,8 @@ export const defaultTheme: ThemeType = {
     xs: "4px",
     s: "8px",
     m: "16px",
-    l: "24px",
-    xl: "32px",
+    l: "32px",
+    xl: "64px",
   },
 };
 

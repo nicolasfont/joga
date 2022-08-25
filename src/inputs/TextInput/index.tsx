@@ -20,7 +20,7 @@ export const TextInput = <C extends ElementType>({
   className,
   focusedBorderColor = theme.accentColor,
   onChange,
-  padding = "m",
+  padding = "s",
   ...props
 }: TextInputProps<C>) => (
   <Stack

@@ -15,7 +15,7 @@ export const Button = <C extends ElementType>({
   className,
   color = theme.fontColor,
   fontWeight = 500,
-  padding = "m",
+  padding = "s",
   ...props
 }: ButtonProps<C>) => (
   <Text

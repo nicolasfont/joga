@@ -1,5 +1,12 @@
 import { ComponentMeta } from "@storybook/react";
-import { Button, Heading, OutlineButton, Paragraph, Row, Stack } from "../..";
+import {
+  Heading,
+  OutlineButton,
+  Paragraph,
+  Row,
+  SolidButton,
+  Stack,
+} from "../..";
 import { PasswordInput, TextInput } from "../../inputs";
 import { Text } from "../../text";
 
@@ -9,24 +16,26 @@ export default {
 
 export const ExampleForm = () => (
   <Stack gap="l" padding="l">
-    <Heading fontSize={1.2}>Please Read Carefully</Heading>
-    <Paragraph>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc
-      scelerisque viverra mauris in aliquam. Tincidunt tortor aliquam nulla
-      facilisi cras fermentum odio eu.
-    </Paragraph>
     <Stack gap="m">
-      <Text fontWeight={500}>Name</Text>
-      <TextInput placeholder="What is your name?" />
-    </Stack>
-    <Stack gap="m">
-      <Text fontWeight={500}>Password</Text>
-      <PasswordInput placeholder="What is your password?" />
+      <Heading fontSize={1.2}>Please Read Carefully</Heading>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc
+        scelerisque viverra mauris in aliquam. Tincidunt tortor aliquam nulla
+        facilisi cras fermentum odio eu.
+      </Paragraph>
+      <Stack gap="s">
+        <Text fontWeight={500}>Name</Text>
+        <TextInput placeholder="What is your name?" />
+      </Stack>
+      <Stack gap="s">
+        <Text fontWeight={500}>Password</Text>
+        <PasswordInput placeholder="What is your password?" />
+      </Stack>
     </Stack>
     <Row gap="m" justify="end">
       <OutlineButton>Cancel</OutlineButton>
-      <Button>Submit</Button>
+      <SolidButton>Submit</SolidButton>
     </Row>
   </Stack>
 );
