@@ -15,6 +15,7 @@ export const Button = <C extends ElementType>({
   className,
   color = theme.fontColor,
   fontWeight = 500,
+  justify = "center",
   padding = "s",
   ...props
 }: ButtonProps<C>) => (
@@ -25,9 +26,10 @@ export const Button = <C extends ElementType>({
     border={border}
     borderColor={borderColor}
     borderRadius={borderRadius}
-    padding={padding}
-    fontWeight={fontWeight}
     color={color}
+    fontWeight={fontWeight}
+    justify={justify}
+    padding={padding}
     className={cx(
       css`
         cursor: pointer;
